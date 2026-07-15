@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>動畫猜歌</title>
+<title>動畫猜歌主持台</title>
 <style>
 :root{
   --bg:#10131a;--panel:#191e28;--panel2:#222938;--text:#f6f7fb;--muted:#aab2c4;
@@ -109,6 +109,18 @@ input[type=file]{max-width:340px}
 }
 .team:hover{filter:brightness(1.03);transform:translateY(-1px)}
 .team small{color:#4b5563}
+.team.correct{
+  background:linear-gradient(135deg,#e8f7ef,#cfeedd);
+  border-color:#8bc8a4;
+  color:#173f2b;
+}
+.team.correct small{color:#3f6b52}
+.team.wrong{
+  background:linear-gradient(135deg,#faecee,#f3d7dc);
+  border-color:#d7a0aa;
+  color:#5a2630;
+}
+.team.wrong small{color:#7b4a53}
 .result-screen{width:min(900px,100%);padding:28px;text-align:center}
 .result-title{font-size:clamp(34px,7vw,68px);font-weight:900;margin-bottom:18px}
 .result-list{display:grid;gap:12px;margin:18px 0}
@@ -601,7 +613,13 @@ function startGame(){
   if(!pool.length)return alert('沒有可用題目');
   pool=gameOrder.value==='manual'?pool.slice().sort((a,b)=>a.order-b.order):shuffle(pool.slice());
   const count=Math.min(+gameCount.value||20,pool.length);gameQuestions=pool.slice(0,count);gameIndex=0;
-  teams=teamNames.value.split(/\n/).map(x=>x.trim()).filter(Boolean).map(name=>({name,score:0}));
+  const enteredTeams=teamNames.value.split(/\n/).map(x=>x.trim()).filter(Boolean);
+  teams=enteredTeams.length
+    ? enteredTeams.map(name=>({name,score:0,type:'team'}))
+    : [
+        {name:'正確',score:0,type:'correct'},
+        {name:'錯誤',score:0,type:'wrong'}
+      ];
   gameSetup.classList.add('hidden');gameStage.classList.remove('hidden');showGameQuestion();
 }
 function showGameQuestion(){
@@ -642,8 +660,20 @@ function reveal(){
   save(false);renderScores();
 }
 function renderScores(){
-  scorebar.innerHTML=teams.map((t,i)=>`<button class="team" data-i="${i}">${esc(t.name)}<br><b>${t.score} 分</b><br><small>答對＋1</small></button>`).join('');
-  document.querySelectorAll('.team').forEach(b=>b.onclick=()=>{teams[+b.dataset.i].score++;renderScores();toast(teams[+b.dataset.i].name+' ＋1')})
+  const soloMode=teams.length===2&&teams.every(t=>t.type==='correct'||t.type==='wrong');
+  scorebar.innerHTML=teams.map((t,i)=>{
+    const cls=t.type==='correct'?'correct':t.type==='wrong'?'wrong':'';
+    const unit=soloMode?'次':'分';
+    const label=soloMode
+      ? (t.type==='correct'?'記錄猜對次數':'記錄猜錯次數')
+      : '答對＋1';
+    return `<button class="team ${cls}" data-i="${i}">${esc(t.name)}<br><b>${t.score} ${unit}</b><br><small>${label}</small></button>`;
+  }).join('');
+  document.querySelectorAll('.team').forEach(b=>b.onclick=()=>{
+    teams[+b.dataset.i].score++;
+    renderScores();
+    toast(teams[+b.dataset.i].name+' ＋1');
+  });
 }
 function nextQuestion(){if(gameIndex+1>=gameQuestions.length)return endGame();gameIndex++;showGameQuestion()}
 function endGame(){
@@ -668,7 +698,7 @@ function endGame(){
   resultList.innerHTML=ranked.map((t,i)=>`
     <div class="result-row">
       <span><span class="result-rank">第 ${i+1} 名</span>　${esc(t.name)}</span>
-      <b>${t.score} 分</b>
+      <b>${t.score} ${teams.length===2&&teams.every(x=>x.type==='correct'||x.type==='wrong')?'次':'分'}</b>
     </div>`).join('');
 }
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
@@ -747,7 +777,7 @@ createTopicBtn.onclick=()=>{const t=newTopicName.value.trim();if(!t)return;if(!t
 startGameBtn.onclick=startGame;playSeg1.onclick=()=>playGameSegment(0);playSeg2.onclick=()=>playGameSegment(1);playSeg3.onclick=()=>playGameSegment(2);replayBtn.onclick=()=>playGameSegment(currentGameSegment);
 hintBtn.onclick=()=>{const q=gameQuestions[gameIndex];hintDisplay.textContent=q.hint||'這題沒有設定提示';hintDisplay.classList.remove('hidden')};
 revealBtn.onclick=reveal;nextQuestionBtn.onclick=nextQuestion;noAnswerBtn.onclick=nextQuestion;endGameBtn.onclick=endGame;
-restartGameBtn.onclick=()=>{resultScreen.classList.add('hidden');gameIndex=0;teams=teams.map(t=>({name:t.name,score:0}));gameQuestions=shuffle(gameQuestions.slice());showGameQuestion()};
+restartGameBtn.onclick=()=>{resultScreen.classList.add('hidden');gameIndex=0;teams=teams.map(t=>({name:t.name,score:0,type:t.type||'team'}));gameQuestions=shuffle(gameQuestions.slice());showGameQuestion()};
 backToSetupBtn.onclick=()=>{resultScreen.classList.add('hidden');gameStage.classList.add('hidden');gameSetup.classList.remove('hidden')};
 importJsonBtn.onclick=importJson;exportBtn.onclick=exportDB;
 resetBtn.onclick=async()=>{if(confirm('放棄本機草稿並重新載入 quiz-data.json？')){localStorage.removeItem(STORAGE_KEY);localStorage.removeItem(TOPIC_KEY);selectedId=null;await load();toast('已重新載入外部題庫')}};
