@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>動畫猜歌主持台</title>
+<style>
+:root{
+  --bg:#10131a;--panel:#191e28;--panel2:#222938;--text:#f6f7fb;--muted:#aab2c4;
+  --accent:#7c9cff;--accent2:#9f7cff;--danger:#ff6b7a;--ok:#55d6a8;--warn:#ffcc66;
+  --border:#30394b;--shadow:0 14px 35px rgba(0,0,0,.25);--radius:18px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.topbar{position:sticky;top:0;z-index:30;display:flex;gap:10px;align-items:center;padding:12px 16px;background:rgba(16,19,26,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.brand{font-weight:800;margin-right:auto}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab,.btn{border:1px solid var(--border);background:var(--panel2);color:var(--text);padding:10px 14px;border-radius:12px}
+.tab.active,.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent}
+.btn.danger{background:#3a2028;color:#ffb6bf;border-color:#60303d}
+.btn.ghost{background:transparent}
+.btn.small{padding:7px 10px;font-size:13px}
+main{padding:18px;max-width:1500px;margin:auto}
+.view{display:none}.view.active{display:block}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;padding:14px;margin-bottom:14px}
+.toolbar input,.toolbar select{background:#111722;color:var(--text);border:1px solid var(--border);border-radius:10px;padding:10px 12px;min-width:150px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.stat{padding:12px 15px;background:var(--panel);border:1px solid var(--border);border-radius:14px}
+.library{display:grid;grid-template-columns:minmax(310px,42%) 1fr;gap:14px;min-height:70vh}
+.list-panel{overflow:hidden}
+.list-head{padding:12px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between}
+.question-list{max-height:76vh;overflow:auto}
+.qrow{display:grid;grid-template-columns:74px 1fr auto;gap:10px;padding:10px;border-bottom:1px solid #252c3a;align-items:center}
+.qrow:hover,.qrow.selected{background:#252d3c}
+.thumb{width:74px;height:42px;object-fit:cover;border-radius:8px;background:#0b0e14}
+.qtitle{font-size:14px;line-height:1.35}
+.meta{font-size:12px;color:var(--muted);margin-top:4px}
+.badge{display:inline-flex;padding:3px 7px;border-radius:999px;font-size:11px;margin:2px;background:#30394b;color:#d8deea}
+.badge.warn{background:#493d20;color:#ffe09a}.badge.danger{background:#4b252d;color:#ffb4be}.badge.ok{background:#193d33;color:#9ff2d3}
+.editor{padding:16px;overflow:auto}
+.empty{display:grid;place-items:center;min-height:400px;color:var(--muted)}
+.player-wrap{aspect-ratio:16/9;background:#090b10;border-radius:14px;overflow:hidden;margin-bottom:14px}
+#player,#gamePlayer{width:100%;height:100%}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label{font-size:13px;color:var(--muted)}
+input,select,textarea{width:100%;background:#111722;color:var(--text);border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+textarea{min-height:76px;resize:vertical}
+.editor-actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.segments{margin-top:16px}
+.segment{border:1px solid var(--border);background:#141925;border-radius:14px;padding:12px;margin-top:10px}
+.segment-head{display:flex;justify-content:space-between;align-items:center}
+.segment-grid{display:grid;grid-template-columns:120px 120px 1fr;gap:8px;margin-top:10px}
+.nudges{display:flex;gap:6px;flex-wrap:wrap}
+.topic-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.topic-chip{padding:6px 9px;border-radius:999px;background:#2d3546;border:1px solid var(--border)}
+.import-box{padding:18px;margin-bottom:14px}
+.import-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+input[type=file]{max-width:340px}
+.topic-manager{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.topic-list{padding:16px}
+.game-setup{max-width:780px;margin:auto;padding:20px}
+.game-stage{min-height:calc(100vh - 90px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px}
+.question-screen{width:min(920px,100%);padding:28px;background:radial-gradient(circle at top,#26314a,#10131a 65%);border:1px solid var(--border);border-radius:26px}
+.question-number{font-size:clamp(38px,8vw,80px);font-weight:900}
+.now-playing{font-size:clamp(18px,4vw,28px);color:var(--muted);margin:12px 0 22px}
+.game-controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.game-controls .btn{font-size:18px;padding:14px 18px}
+.answer-screen{width:min(980px,100%);display:none}
+.answer-screen.show{display:block}
+.answer-title{font-size:clamp(30px,6vw,62px);font-weight:900;margin:14px 0 8px}
+.answer-meta{font-size:clamp(16px,3vw,25px);color:var(--muted);margin-bottom:16px}
+.scorebar{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+.team{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:10px 12px;min-width:120px}
+.hidden{display:none!important}
+.notice{padding:10px 12px;border-radius:10px;background:#222a39;color:#dce3f2;margin:10px 0}
+.toast{position:fixed;right:18px;bottom:18px;z-index:100;background:#283248;color:white;padding:12px 16px;border-radius:12px;box-shadow:var(--shadow);display:none}
+@media(max-width:850px){
+  main{padding:10px}
+  .topbar{align-items:flex-start;flex-wrap:wrap}
+  .brand{width:100%}
+  .library{grid-template-columns:1fr}
+  .question-list{max-height:38vh}
+  .form-grid{grid-template-columns:1fr}
+  .segment-grid{grid-template-columns:1fr}
+  .topic-manager{grid-template-columns:1fr}
+  .qrow{grid-template-columns:64px 1fr auto}
+  .thumb{width:64px;height:38px}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">🎧 動畫猜歌主持台</div>
+  <nav class="tabs">
+    <button class="tab active" data-view="libraryView">題庫</button>
+    <button class="tab" data-view="topicsView">主題</button>
+    <button class="tab" data-view="gameView">開始遊戲</button>
+    <button class="tab" data-view="backupView">匯入／備份</button>
+  </nav>
+</header>
+<main>
+<section id="libraryView" class="view active">
+  <div class="stats">
+    <div class="stat">總題數 <b id="statTotal">0</b></div>
+    <div class="stat">已整理 <b id="statDone">0</b></div>
+    <div class="stat">未整理 <b id="statPending">0</b></div>
+    <div class="stat">疑似重複 <b id="statDup">0</b></div>
+    <div class="stat">播放失敗 <b id="statBroken">0</b></div>
+  </div>
+  <div class="toolbar card">
+    <input id="searchInput" placeholder="搜尋動畫、歌名、原始標題…">
+    <select id="statusFilter"><option value="">全部狀態</option><option value="unorganized">未整理</option><option value="organized">已整理</option><option value="duplicate">疑似重複</option><option value="disabled">停用</option></select>
+    <select id="yearFilter"><option value="">全部年份</option></select>
+    <select id="topicFilter"><option value="">全部主題</option></select>
+    <button class="btn" id="addSingleBtn">＋新增單支影片</button>
+  </div>
+  <div class="library">
+    <div class="card list-panel">
+      <div class="list-head"><span id="resultCount">0 題</span><button class="btn small ghost" id="markDuplicatesBtn">重新檢查重複</button></div>
+      <div id="questionList" class="question-list"></div>
+    </div>
+    <div id="editor" class="card editor"><div class="empty">從左邊選擇一題開始整理</div></div>
+  </div>
+</section>
+
+<section id="topicsView" class="view">
+  <div class="topic-manager">
+    <div class="card topic-list">
+      <h2>自訂主題</h2>
+      <div class="import-row"><input id="newTopicName" placeholder="例如：2010～2020年代"><button class="btn primary" id="createTopicBtn">建立主題</button></div>
+      <div id="topicList" style="margin-top:14px"></div>
+    </div>
+    <div class="card topic-list">
+      <h2>使用方式</h2>
+      <p>每題可以同時加入多個主題。正式遊戲時可指定從某個主題抽題，不會只從總題庫隨機抽取。</p>
+      <div class="notice">年份與季度也能作為篩選條件；主題適合拿來建立「聚會2026」「懷舊動畫」「地獄題」這類人工集合。</div>
+    </div>
+  </div>
+</section>
+
+<section id="gameView" class="view">
+  <div id="gameSetup" class="card game-setup">
+    <h2>建立本次遊戲</h2>
+    <div class="form-grid">
+      <div class="field"><label>抽題來源</label><select id="gameTopic"><option value="">全部啟用題目</option></select></div>
+      <div class="field"><label>題數</label><input id="gameCount" type="number" min="1" value="20"></div>
+      <div class="field full"><label>隊伍名稱（每行一隊，可留空）</label><textarea id="teamNames" placeholder="A隊&#10;B隊"></textarea></div>
+    </div>
+    <div class="editor-actions"><button class="btn primary" id="startGameBtn">開始遊戲</button></div>
+  </div>
+
+  <div id="gameStage" class="game-stage hidden">
+    <div id="questionScreen" class="question-screen">
+      <div class="question-number">第 <span id="gameNo">1</span> 題</div>
+      <div id="gameSegmentLabel" class="now-playing">準備播放片段 1</div>
+      <div class="game-controls">
+        <button class="btn primary" id="playSeg1">播放片段1</button>
+        <button class="btn" id="playSeg2">片段2</button>
+        <button class="btn" id="playSeg3">片段3</button>
+        <button class="btn" id="replayBtn">重播</button>
+        <button class="btn" id="hintBtn">提示</button>
+        <button class="btn primary" id="revealBtn">公布答案</button>
+      </div>
+      <div id="hintDisplay" class="notice hidden"></div>
+    </div>
+    <div id="answerScreen" class="answer-screen">
+      <div class="player-wrap"><div id="gamePlayer"></div></div>
+      <div id="answerAnime" class="answer-title">動畫名稱</div>
+      <div id="answerMeta" class="answer-meta"></div>
+      <div class="game-controls">
+        <button class="btn" id="noAnswerBtn">無人答對</button>
+        <button class="btn primary" id="nextQuestionBtn">下一題</button>
+        <button class="btn danger" id="endGameBtn">結束遊戲</button>
+      </div>
+      <div id="scorebar" class="scorebar"></div>
+    </div>
+  </div>
+</section>
+
+<section id="backupView" class="view">
+  <div class="card import-box">
+    <h2>匯入題庫</h2>
+    <p>支援原始 yt-dlp 播放清單 JSON，以及本工具匯出的完整題庫 JSON。網站正式題庫來自同資料夾內的 quiz-data.json。</p>
+    <div class="import-row"><input type="file" id="jsonFile" accept=".json,application/json"><button class="btn primary" id="importJsonBtn">匯入 JSON</button></div>
+    <div class="notice">匯入時以 YouTube影片 ID 比對；重複項目會保留並標示。完成整理後，匯出完整題庫 JSON，重新命名為 quiz-data.json 並覆蓋 GitHub 上的舊檔。</div>
+  </div>
+  <div class="card import-box">
+    <h2>備份與還原</h2>
+    <div class="import-row">
+      <button class="btn primary" id="exportBtn">匯出完整題庫 JSON</button>
+      <button class="btn" id="resetBtn">重新載入外部題庫</button>
+      <button class="btn danger" id="clearBtn">清空本機資料</button>
+    </div>
+  </div>
+</section>
+</main>
+<div id="toast" class="toast"></div>
+
+<script>
+const SEED = [];
+const DATA_URL="quiz-data.json";
+const STORAGE_KEY='animeQuizDB_v1';
+const TOPIC_KEY='animeQuizTopics_v1';
+let db=[];
+let topics=[];
+let selectedId=null;
+let player=null, gamePlayer=null;
+let playerReady=false, gamePlayerReady=false;
+let segmentTimer=null;
+let gameQuestions=[], gameIndex=0, currentGameSegment=0;
+let teams=[];
+
+function clone(v){return JSON.parse(JSON.stringify(v))}
+async function load(){
+  let remote={topics:[],questions:[]};
+  try{
+    const res=await fetch(DATA_URL,{cache:'no-store'});
+    if(!res.ok)throw new Error('HTTP '+res.status);
+    remote=await res.json();
+  }catch(e){
+    console.warn('無法讀取外部題庫',e);
+  }
+  let localDB=null,localTopics=null;
+  try{localDB=JSON.parse(localStorage.getItem(STORAGE_KEY))}catch{}
+  try{localTopics=JSON.parse(localStorage.getItem(TOPIC_KEY))}catch{}
+  if(Array.isArray(localDB)){
+    db=localDB;
+    topics=Array.isArray(localTopics)?localTopics:(remote.topics||[]);
+  }else{
+    db=Array.isArray(remote)?remote:(remote.questions||[]);
+    topics=Array.isArray(remote.topics)?remote.topics:[];
+  }
+  normalizeDB();detectDuplicates();save(false);renderAll();
+}
+function normalizeDB(){
+  db=db.map((q,i)=>({
+    id:q.id||('q_'+(q.videoId||Date.now()+'_'+i)),videoId:q.videoId||extractVideoId(q.url)||'',url:q.url||'',
+    originalTitle:q.originalTitle||q.title||'(標題缺失)',channel:q.channel||'',thumbnail:q.thumbnail||'',duration:Number(q.duration)||0,
+    animeZh:q.animeZh||'',animeJa:q.animeJa||'',animeEn:q.animeEn||'',year:q.year||'',season:q.season||'',
+    seriesPart:q.seriesPart||'',songTitle:q.songTitle||'',artist:q.artist||'',songType:q.songType||'',songIndex:q.songIndex||'',
+    hint:q.hint||'',notes:q.notes||'',topics:Array.isArray(q.topics)?q.topics:[],enabled:q.enabled!==false,
+    status:q.status||'unorganized',videoStatus:q.videoStatus||'unknown',addedAt:q.addedAt||new Date().toISOString().slice(0,10),
+    firstPlayedYear:q.firstPlayedYear||'',lastPlayedYear:q.lastPlayedYear||'',playCount:Number(q.playCount)||0,
+    segments:(Array.isArray(q.segments)&&q.segments.length?q.segments:[{start:0,length:7,enabled:true}]).slice(0,3).map(s=>({start:Number(s.start)||0,length:Number(s.length)||7,enabled:s.enabled!==false}))
+  }))
+}
+function save(show=true){
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(db));
+  localStorage.setItem(TOPIC_KEY,JSON.stringify(topics));
+  if(show) toast('已儲存');
+}
+function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.style.display='block';setTimeout(()=>el.style.display='none',1800)}
+function extractVideoId(url){
+  if(!url)return''; const m=url.match(/(?:v=|youtu\.be\/|shorts\/|embed\/)([A-Za-z0-9_-]{11})/);return m?m[1]:''
+}
+function detectDuplicates(){
+  const groups={}; db.forEach(q=>{if(q.videoId)(groups[q.videoId]??=[]).push(q)});
+  Object.values(groups).forEach(arr=>{if(arr.length>1)arr.forEach(q=>q.status='duplicate')})
+}
+function statusLabel(q){
+  if(!q.enabled)return '<span class="badge danger">停用</span>';
+  if(q.status==='duplicate')return '<span class="badge warn">重複</span>';
+  if(q.videoStatus==='broken')return '<span class="badge danger">播放失敗</span>';
+  if(q.status==='organized')return '<span class="badge ok">已整理</span>';
+  return '<span class="badge">未整理</span>';
+}
+function filteredDB(){
+  const s=document.getElementById('searchInput').value.trim().toLowerCase();
+  const st=document.getElementById('statusFilter').value;
+  const year=document.getElementById('yearFilter').value;
+  const topic=document.getElementById('topicFilter').value;
+  return db.filter(q=>{
+    const blob=[q.originalTitle,q.animeZh,q.animeJa,q.animeEn,q.songTitle,q.artist,q.channel,q.notes].join(' ').toLowerCase();
+    const statusMatch=!st||(st==='disabled'?!q.enabled:q.status===st);
+    return (!s||blob.includes(s))&&statusMatch&&(!year||String(q.year)===year)&&(!topic||q.topics.includes(topic));
+  })
+}
+function renderAll(){
+  renderStats();renderFilters();renderQuestionList();renderTopics();renderGameOptions();
+  if(selectedId)renderEditor(selectedId)
+}
+function renderStats(){
+  statTotal.textContent=db.length;
+  statDone.textContent=db.filter(q=>q.status==='organized').length;
+  statPending.textContent=db.filter(q=>q.status==='unorganized').length;
+  statDup.textContent=db.filter(q=>q.status==='duplicate').length;
+  statBroken.textContent=db.filter(q=>q.videoStatus==='broken').length;
+}
+function renderFilters(){
+  const years=[...new Set(db.map(q=>q.year).filter(Boolean).map(String))].sort((a,b)=>b-a);
+  const keepYear=yearFilter.value,keepTopic=topicFilter.value;
+  yearFilter.innerHTML='<option value="">全部年份</option>'+years.map(y=>`<option>${esc(y)}</option>`).join('');
+  topicFilter.innerHTML='<option value="">全部主題</option>'+topics.map(t=>`<option>${esc(t)}</option>`).join('');
+  yearFilter.value=keepYear;topicFilter.value=keepTopic;
+}
+function renderQuestionList(){
+  const arr=filteredDB(); resultCount.textContent=arr.length+' 題';
+  questionList.innerHTML=arr.map(q=>`
+    <div class="qrow ${q.id===selectedId?'selected':''}" data-id="${esc(q.id)}">
+      <img class="thumb" src="${esc(q.thumbnail||('https://i.ytimg.com/vi/'+q.videoId+'/hqdefault.jpg'))}" onerror="this.style.visibility='hidden'">
+      <div><div class="qtitle">${esc(q.animeZh||q.originalTitle)}</div><div class="meta">${esc(q.songTitle||q.channel||'尚未整理')}</div>${statusLabel(q)}</div>
+      <div class="meta">${q.segments.length}段</div>
+    </div>`).join('')||'<div class="empty">沒有符合條件的題目</div>';
+  document.querySelectorAll('.qrow').forEach(el=>el.onclick=()=>{selectedId=el.dataset.id;renderQuestionList();renderEditor(selectedId)})
+}
+function esc(v){return htmlEscape(String(v??''))}
+function htmlEscape(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function renderEditor(id){
+  const q=db.find(x=>x.id===id);if(!q)return;
+  editor.innerHTML=`
+    <div class="player-wrap"><div id="player"></div></div>
+    <div class="editor-actions">
+      <button class="btn primary" id="saveQuestion">儲存</button>
+      <button class="btn" id="saveNext">儲存並下一題</button>
+      <button class="btn" id="toggleEnabled">${q.enabled?'停用':'啟用'}</button>
+      <button class="btn danger" id="deleteQuestion">刪除題目</button>
+      <a class="btn ghost" href="${esc(q.url)}" target="_blank">YouTube開啟</a>
+    </div>
+    <div class="form-grid">
+      <div class="field full"><label>YouTube原始標題</label><input id="fOriginalTitle" value="${esc(q.originalTitle)}"></div>
+      <div class="field"><label>動畫中文名</label><input id="fAnimeZh" value="${esc(q.animeZh)}"></div>
+      <div class="field"><label>動畫日文名</label><input id="fAnimeJa" value="${esc(q.animeJa)}"></div>
+      <div class="field"><label>動畫英文名</label><input id="fAnimeEn" value="${esc(q.animeEn)}"></div>
+      <div class="field"><label>年份</label><input id="fYear" type="number" min="1900" max="2100" value="${esc(q.year)}"></div>
+      <div class="field"><label>季度</label><select id="fSeason">${['','冬','春','夏','秋'].map(v=>`<option ${q.season===v?'selected':''}>${v}</option>`).join('')}</select></div>
+      <div class="field"><label>第幾季／篇章</label><input id="fSeriesPart" value="${esc(q.seriesPart)}"></div>
+      <div class="field"><label>歌名</label><input id="fSongTitle" value="${esc(q.songTitle)}"></div>
+      <div class="field"><label>歌手</label><input id="fArtist" value="${esc(q.artist)}"></div>
+      <div class="field"><label>歌曲類型</label><select id="fSongType">${['','OP','ED','插入曲','角色歌','其他'].map(v=>`<option ${q.songType===v?'selected':''}>${v}</option>`).join('')}</select></div>
+      <div class="field"><label>編號（例：OP2）</label><input id="fSongIndex" value="${esc(q.songIndex)}"></div>
+      <div class="field full"><label>主題（可複選）</label><div id="editorTopics" class="topic-chips">${topics.map(t=>`<label class="topic-chip"><input type="checkbox" value="${esc(t)}" ${q.topics.includes(t)?'checked':''}> ${esc(t)}</label>`).join('')||'尚未建立主題'}</div></div>
+      <div class="field full"><label>提示</label><input id="fHint" value="${esc(q.hint)}"></div>
+      <div class="field full"><label>備註</label><textarea id="fNotes">${esc(q.notes)}</textarea></div>
+    </div>
+    <div class="segments"><h3>播放片段（最多3段）</h3><div id="segmentsBox"></div><button class="btn" id="addSegment" ${q.segments.length>=3?'disabled':''}>＋增加片段</button></div>`;
+  renderSegments(q);
+  setupEditorPlayer(q);
+  saveQuestion.onclick=()=>commitEditor(q);
+  saveNext.onclick=()=>{commitEditor(q,false);selectNext(q.id)};
+  toggleEnabled.onclick=()=>{q.enabled=!q.enabled;save();renderAll()};
+  deleteQuestion.onclick=()=>{if(confirm('確定刪除這題？')){db=db.filter(x=>x.id!==q.id);selectedId=null;save();editor.innerHTML='<div class="empty">題目已刪除</div>';renderAll()}};
+  addSegment.onclick=()=>{if(q.segments.length<3){q.segments.push({start:0,length:7,enabled:true});renderSegments(q)}}
+}
+function renderSegments(q){
+  segmentsBox.innerHTML=q.segments.map((s,i)=>`
+  <div class="segment">
+    <div class="segment-head"><b>片段 ${i+1}</b><button class="btn small danger seg-delete" data-i="${i}" ${q.segments.length===1?'disabled':''}>刪除</button></div>
+    <div class="segment-grid">
+      <div class="field"><label>起點（秒）</label><input class="seg-start" data-i="${i}" type="number" step=".1" min="0" value="${s.start}"></div>
+      <div class="field"><label>長度（秒）</label><input class="seg-length" data-i="${i}" type="number" step=".5" min="1" max="60" value="${s.length}"></div>
+      <div class="nudges">
+        <button class="btn small nudge" data-i="${i}" data-v="-5">-5秒</button><button class="btn small nudge" data-i="${i}" data-v="-1">-1秒</button>
+        <button class="btn small set-current" data-i="${i}">設為目前時間</button>
+        <button class="btn small nudge" data-i="${i}" data-v="1">+1秒</button><button class="btn small nudge" data-i="${i}" data-v="5">+5秒</button>
+        <button class="btn small primary test-seg" data-i="${i}">測試片段</button>
+      </div>
+    </div>
+  </div>`).join('');
+  document.querySelectorAll('.seg-delete').forEach(b=>b.onclick=()=>{q.segments.splice(+b.dataset.i,1);renderSegments(q)});
+  document.querySelectorAll('.nudge').forEach(b=>b.onclick=()=>{const inp=document.querySelector(`.seg-start[data-i="${b.dataset.i}"]`);inp.value=Math.max(0,(+inp.value||0)+(+b.dataset.v))});
+  document.querySelectorAll('.set-current').forEach(b=>b.onclick=()=>{if(player&&player.getCurrentTime){document.querySelector(`.seg-start[data-i="${b.dataset.i}"]`).value=player.getCurrentTime().toFixed(1)}});
+  document.querySelectorAll('.test-seg').forEach(b=>b.onclick=()=>testSegment(+b.dataset.i));
+}
+function syncSegments(q){
+  q.segments=[...document.querySelectorAll('.segment')].map((el,i)=>({start:+el.querySelector('.seg-start').value||0,length:+el.querySelector('.seg-length').value||7,enabled:true}))
+}
+function commitEditor(q,show=true){
+  syncSegments(q);
+  q.originalTitle=fOriginalTitle.value.trim();q.animeZh=fAnimeZh.value.trim();q.animeJa=fAnimeJa.value.trim();q.animeEn=fAnimeEn.value.trim();
+  q.year=fYear.value.trim();q.season=fSeason.value;q.seriesPart=fSeriesPart.value.trim();q.songTitle=fSongTitle.value.trim();q.artist=fArtist.value.trim();
+  q.songType=fSongType.value;q.songIndex=fSongIndex.value.trim();q.hint=fHint.value.trim();q.notes=fNotes.value.trim();
+  q.topics=[...document.querySelectorAll('#editorTopics input:checked')].map(x=>x.value);
+  q.status=(q.animeZh||q.animeJa||q.animeEn)&&q.songTitle&&q.year?'organized':(q.status==='duplicate'?'duplicate':'unorganized');
+  save(show);renderAll();
+}
+function selectNext(id){const arr=filteredDB();const i=arr.findIndex(q=>q.id===id);if(arr[i+1]){selectedId=arr[i+1].id;renderQuestionList();renderEditor(selectedId)}}
+function setupEditorPlayer(q){
+  if(!window.YT)return;
+  player=new YT.Player('player',{videoId:q.videoId,playerVars:{playsinline:1,rel:0},events:{onReady:()=>playerReady=true,onError:()=>{q.videoStatus='broken';save(false);renderStats();toast('影片播放失敗，已標記')}}})
+}
+function testSegment(i){
+  const start=+document.querySelector(`.seg-start[data-i="${i}"]`).value||0;
+  const length=+document.querySelector(`.seg-length[data-i="${i}"]`).value||7;
+  clearTimeout(segmentTimer);player.seekTo(start,true);player.playVideo();segmentTimer=setTimeout(()=>player.pauseVideo(),length*1000)
+}
+function renderTopics(){
+  topicList.innerHTML=topics.map(t=>`<div class="segment-head" style="padding:8px 0;border-bottom:1px solid var(--border)"><span>${esc(t)} <small class="meta">(${db.filter(q=>q.topics.includes(t)).length}題)</small></span><button class="btn small danger delete-topic" data-t="${esc(t)}">刪除</button></div>`).join('')||'<div class="empty">尚未建立主題</div>';
+  document.querySelectorAll('.delete-topic').forEach(b=>b.onclick=()=>{const t=b.dataset.t;if(confirm('刪除主題「'+t+'」？題目本身不會刪除。')){topics=topics.filter(x=>x!==t);db.forEach(q=>q.topics=q.topics.filter(x=>x!==t));save();renderAll()}})
+}
+function renderGameOptions(){
+  const opts='<option value="">全部啟用題目</option>'+topics.map(t=>`<option>${esc(t)}</option>`).join('');
+  gameTopic.innerHTML=opts;
+}
+function startGame(){
+  const topic=gameTopic.value;let pool=db.filter(q=>q.enabled&&q.videoId&&q.segments.length&&(!topic||q.topics.includes(topic)));
+  if(!pool.length)return alert('沒有可用題目');
+  pool=shuffle(pool.slice());const count=Math.min(+gameCount.value||20,pool.length);gameQuestions=pool.slice(0,count);gameIndex=0;
+  teams=teamNames.value.split(/\n/).map(x=>x.trim()).filter(Boolean).map(name=>({name,score:0}));
+  gameSetup.classList.add('hidden');gameStage.classList.remove('hidden');showGameQuestion();
+}
+function showGameQuestion(){
+  clearTimeout(segmentTimer);questionScreen.classList.remove('hidden');answerScreen.classList.remove('show');
+  const q=gameQuestions[gameIndex];gameNo.textContent=gameIndex+1;gameSegmentLabel.textContent='準備播放片段 1';hintDisplay.classList.add('hidden');
+  [playSeg1,playSeg2,playSeg3].forEach((b,i)=>{b.style.display=q.segments[i]?'inline-block':'none'});
+  currentGameSegment=0;setupGamePlayer(q);renderScores();
+}
+function setupGamePlayer(q){
+  if(gamePlayer&&gamePlayer.loadVideoById){gamePlayer.cueVideoById(q.videoId);return}
+  if(window.YT)gamePlayer=new YT.Player('gamePlayer',{videoId:q.videoId,playerVars:{playsinline:1,rel:0},events:{onReady:()=>gamePlayerReady=true,onError:()=>{q.videoStatus='broken';save(false);toast('影片播放失敗，已標記')}}})
+}
+function playGameSegment(i){
+  const q=gameQuestions[gameIndex],s=q.segments[i];if(!s)return;currentGameSegment=i;gameSegmentLabel.textContent=`正在播放片段 ${i+1}（${s.length}秒）`;
+  clearTimeout(segmentTimer);gamePlayer.seekTo(s.start,true);gamePlayer.playVideo();segmentTimer=setTimeout(()=>gamePlayer.pauseVideo(),s.length*1000)
+}
+function reveal(){
+  clearTimeout(segmentTimer);gamePlayer.pauseVideo();questionScreen.classList.add('hidden');answerScreen.classList.add('show');
+  const q=gameQuestions[gameIndex];answerAnime.textContent=q.animeZh||q.animeJa||q.animeEn||q.originalTitle;
+  answerMeta.textContent=[q.year&&(q.year+'年'),q.songTitle,q.artist,q.songType+(q.songIndex?' '+q.songIndex:'')].filter(Boolean).join('｜');
+  q.playCount=(q.playCount||0)+1;q.lastPlayedYear=new Date().getFullYear();if(!q.firstPlayedYear)q.firstPlayedYear=q.lastPlayedYear;save(false);renderScores();
+}
+function renderScores(){
+  scorebar.innerHTML=teams.map((t,i)=>`<button class="team" data-i="${i}">${esc(t.name)}<br><b>${t.score} 分</b><br><small>答對＋1</small></button>`).join('');
+  document.querySelectorAll('.team').forEach(b=>b.onclick=()=>{teams[+b.dataset.i].score++;renderScores();toast(teams[+b.dataset.i].name+' ＋1')})
+}
+function nextQuestion(){if(gameIndex+1>=gameQuestions.length)return endGame();gameIndex++;showGameQuestion()}
+function endGame(){clearTimeout(segmentTimer);gameStage.classList.add('hidden');gameSetup.classList.remove('hidden');if(gamePlayer&&gamePlayer.stopVideo)gamePlayer.stopVideo();toast('遊戲已結束')}
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function addSingle(){
+  const url=prompt('貼上 YouTube影片網址：');if(!url)return;const vid=extractVideoId(url);if(!vid)return alert('無法辨識影片 ID');
+  const q={...clone(SEED[0]),id:'q_'+vid+'_'+Date.now(),videoId:vid,url:'https://www.youtube.com/watch?v='+vid,originalTitle:'待整理的新影片',thumbnail:'https://i.ytimg.com/vi/'+vid+'/hqdefault.jpg',addedAt:new Date().toISOString().slice(0,10)};
+  db.unshift(q);detectDuplicates();save();selectedId=q.id;renderAll();
+}
+async function importJson(){
+  const f=jsonFile.files[0];if(!f)return alert('請先選擇 JSON');
+  try{
+    const obj=JSON.parse(await f.text());let incoming=[];
+    if(Array.isArray(obj))incoming=obj;
+    else if(Array.isArray(obj.questions)){topics=Array.isArray(obj.topics)?obj.topics:topics;incoming=obj.questions;}
+    else if(Array.isArray(obj.entries))incoming=obj.entries.map((e,i)=>({videoId:e.id||extractVideoId(e.url),url:e.url||'',originalTitle:e.title||'(標題缺失)',channel:e.channel||e.uploader||'',thumbnail:(e.thumbnails&&e.thumbnails.length?e.thumbnails[e.thumbnails.length-1].url:''),duration:e.duration||0,segments:[{start:0,length:7,enabled:true}]}));
+    else throw new Error('格式不支援');
+    const before=db.length;incoming.forEach((x,i)=>{const vid=x.videoId||extractVideoId(x.url);db.push({...clone(SEED[0]),...x,id:x.id||('q_'+(vid||Date.now())+'_'+i),videoId:vid,url:x.url||('https://www.youtube.com/watch?v='+vid)})});
+    normalizeDB();detectDuplicates();save();renderAll();alert(`匯入完成：新增 ${db.length-before} 筆；重複項目已標示。`)
+  }catch(e){alert('匯入失敗：'+e.message)}
+}
+function exportDB(){
+  const blob=new Blob([JSON.stringify({version:1,exportedAt:new Date().toISOString(),topics,questions:db},null,2)],{type:'application/json;charset=utf-8'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='quiz-data.json';a.click();URL.revokeObjectURL(a.href)
+}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.view).classList.add('active')});
+[searchInput,statusFilter,yearFilter,topicFilter].forEach(el=>el.addEventListener(el.tagName==='INPUT'?'input':'change',renderQuestionList));
+markDuplicatesBtn.onclick=()=>{db.forEach(q=>{if(q.status==='duplicate')q.status='unorganized'});detectDuplicates();save();renderAll()};
+addSingleBtn.onclick=addSingle;
+createTopicBtn.onclick=()=>{const t=newTopicName.value.trim();if(!t)return;if(!topics.includes(t))topics.push(t);newTopicName.value='';save();renderAll()};
+startGameBtn.onclick=startGame;playSeg1.onclick=()=>playGameSegment(0);playSeg2.onclick=()=>playGameSegment(1);playSeg3.onclick=()=>playGameSegment(2);replayBtn.onclick=()=>playGameSegment(currentGameSegment);
+hintBtn.onclick=()=>{const q=gameQuestions[gameIndex];hintDisplay.textContent=q.hint||'這題沒有設定提示';hintDisplay.classList.remove('hidden')};
+revealBtn.onclick=reveal;nextQuestionBtn.onclick=nextQuestion;noAnswerBtn.onclick=nextQuestion;endGameBtn.onclick=endGame;
+importJsonBtn.onclick=importJson;exportBtn.onclick=exportDB;
+resetBtn.onclick=async()=>{if(confirm('放棄本機草稿並重新載入 quiz-data.json？')){localStorage.removeItem(STORAGE_KEY);localStorage.removeItem(TOPIC_KEY);selectedId=null;await load();toast('已重新載入外部題庫')}};
+clearBtn.onclick=()=>{if(confirm('確定清空所有本機題庫？')){db=[];topics=[];selectedId=null;save();renderAll()}};
+window.onYouTubeIframeAPIReady=()=>{if(selectedId)renderEditor(selectedId)};
+const yt=document.createElement('script');yt.src='https://www.youtube.com/iframe_api';document.head.appendChild(yt);
+load();
+</script>
+</body>
+</html>
