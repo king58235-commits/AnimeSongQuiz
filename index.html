@@ -70,8 +70,22 @@ input[type=file]{max-width:340px}
 .now-playing{font-size:clamp(18px,4vw,28px);color:var(--muted);margin:12px 0 22px}
 .game-controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 .game-controls .btn{font-size:18px;padding:14px 18px}
-.answer-screen{width:min(980px,100%);display:none}
-.answer-screen.show{display:block}
+.answer-screen{
+  width:min(980px,100%);
+  display:block;
+  position:fixed;
+  left:-12000px;
+  top:0;
+  opacity:0;
+  pointer-events:none;
+}
+.answer-screen.show{
+  position:static;
+  left:auto;
+  top:auto;
+  opacity:1;
+  pointer-events:auto;
+}
 .answer-title{font-size:clamp(30px,6vw,62px);font-weight:900;margin:14px 0 8px}
 .answer-meta{font-size:clamp(16px,3vw,25px);color:var(--muted);margin-bottom:16px}
 .scorebar{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:14px}
@@ -418,10 +432,24 @@ function playGameSegment(i){
   clearTimeout(segmentTimer);gamePlayer.seekTo(s.start,true);gamePlayer.playVideo();segmentTimer=setTimeout(()=>gamePlayer.pauseVideo(),s.length*1000)
 }
 function reveal(){
-  clearTimeout(segmentTimer);gamePlayer.pauseVideo();questionScreen.classList.add('hidden');answerScreen.classList.add('show');
-  const q=gameQuestions[gameIndex];answerAnime.textContent=q.animeZh||q.animeJa||q.animeEn||q.originalTitle;
+  clearTimeout(segmentTimer);
+  questionScreen.classList.add('hidden');
+  answerScreen.classList.add('show');
+  const q=gameQuestions[gameIndex];
+  answerAnime.textContent=q.animeZh||q.animeJa||q.animeEn||q.originalTitle;
   answerMeta.textContent=[q.year&&(q.year+'年'),q.songTitle,q.artist,q.songType+(q.songIndex?' '+q.songIndex:'')].filter(Boolean).join('｜');
-  q.playCount=(q.playCount||0)+1;q.lastPlayedYear=new Date().getFullYear();if(!q.firstPlayedYear)q.firstPlayedYear=q.lastPlayedYear;save(false);renderScores();
+  requestAnimationFrame(()=>{
+    if(gamePlayer&&gamePlayer.getIframe){
+      const iframe=gamePlayer.getIframe();
+      iframe.style.width='100%';
+      iframe.style.height='100%';
+    }
+    if(gamePlayer&&gamePlayer.pauseVideo)gamePlayer.pauseVideo();
+  });
+  q.playCount=(q.playCount||0)+1;
+  q.lastPlayedYear=new Date().getFullYear();
+  if(!q.firstPlayedYear)q.firstPlayedYear=q.lastPlayedYear;
+  save(false);renderScores();
 }
 function renderScores(){
   scorebar.innerHTML=teams.map((t,i)=>`<button class="team" data-i="${i}">${esc(t.name)}<br><b>${t.score} 分</b><br><small>答對＋1</small></button>`).join('');
