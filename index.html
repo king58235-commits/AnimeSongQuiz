@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>動畫猜歌主持台</title>
+<title>動畫猜歌</title>
 <style>
 :root{
   --bg:#10131a;--panel:#191e28;--panel2:#222938;--text:#f6f7fb;--muted:#aab2c4;
@@ -29,16 +29,19 @@ main{padding:18px;max-width:1500px;margin:auto}
 .toolbar input,.toolbar select{background:#111722;color:var(--text);border:1px solid var(--border);border-radius:10px;padding:10px 12px;min-width:150px}
 .stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
 .stat{padding:12px 15px;background:var(--panel);border:1px solid var(--border);border-radius:14px}
-.library{display:grid;grid-template-columns:minmax(310px,42%) 1fr;gap:14px;min-height:70vh}
-.list-panel{overflow:hidden}
+.library{display:grid;grid-template-columns:minmax(310px,42%) 1fr;gap:14px;align-items:start}
+.list-panel{overflow:hidden;align-self:start}
 .list-head{padding:12px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between}
-.question-list{max-height:76vh;overflow:auto}
-.qrow{display:grid;grid-template-columns:28px 74px 1fr auto;gap:10px;padding:10px;border-bottom:1px solid #252c3a;align-items:center}
+.question-list{max-height:76vh;overflow:auto;min-height:0}
+.qrow{display:grid;grid-template-columns:28px 74px 1fr auto auto;gap:10px;padding:10px;border-bottom:1px solid #252c3a;align-items:center}
 .qrow.dragging{opacity:.45}
-.qrow.drag-over{outline:2px dashed var(--accent);outline-offset:-3px}
+.qrow.drag-over{outline:3px solid var(--accent);outline-offset:-3px;background:#2a3650}
 .drag-handle{display:grid;place-items:center;color:var(--muted);font-size:20px;user-select:none}
-.manual-sort-active .drag-handle{color:var(--accent);cursor:grab}
+.manual-sort-active .drag-handle{color:var(--accent);cursor:grab;background:#27324a;border-radius:8px}
+.manual-sort-active .drag-handle:active{cursor:grabbing}
 .manual-sort-active .qrow{touch-action:none}
+.order-buttons{display:flex;flex-direction:column;gap:4px}
+.order-buttons button{padding:3px 7px;min-width:34px}
 .qrow:hover,.qrow.selected{background:#252d3c}
 .thumb{width:74px;height:42px;object-fit:cover;border-radius:8px;background:#0b0e14}
 .qtitle{font-size:14px;line-height:1.35}
@@ -124,7 +127,7 @@ input[type=file]{max-width:340px}
   .form-grid{grid-template-columns:1fr}
   .segment-grid{grid-template-columns:1fr}
   .topic-manager{grid-template-columns:1fr}
-  .qrow{grid-template-columns:26px 64px 1fr auto}
+  .qrow{grid-template-columns:26px 64px 1fr auto auto}
   .thumb{width:64px;height:38px}
 }
 </style>
@@ -164,7 +167,7 @@ input[type=file]{max-width:340px}
       <option value="unorganizedFirst">未整理優先</option>
       <option value="addedDesc">最近新增</option>
     </select>
-    <button class="btn" id="toggleManualSortBtn">開啟拖曳排序</button>
+    <button class="btn" id="toggleManualSortBtn">開啟手動排序</button>
     <button class="btn" id="addSingleBtn">＋新增單支影片</button>
   </div>
   <div class="library">
@@ -384,30 +387,117 @@ function renderFilters(){
 function renderQuestionList(){
   const arr=filteredDB(); resultCount.textContent=arr.length+' 題';
   questionList.innerHTML=arr.map(q=>`
-    <div class="qrow ${q.id===selectedId?'selected':''}" data-id="${esc(q.id)}" draggable="${manualSortActive?'true':'false'}">
-      <div class="drag-handle">☰</div>
+    <div class="qrow ${q.id===selectedId?'selected':''}" data-id="${esc(q.id)}">
+      <div class="drag-handle" title="拖曳排序">☰</div>
       <img class="thumb" src="${esc(q.thumbnail||('https://i.ytimg.com/vi/'+q.videoId+'/hqdefault.jpg'))}" onerror="this.style.visibility='hidden'">
       <div><div class="qtitle">${esc(q.animeZh||q.originalTitle)}</div><div class="meta">${esc(q.songTitle||q.channel||'尚未整理')}</div>${statusLabel(q)}</div>
       <div class="meta">${q.segments.length}段</div>
+      <div class="order-buttons">
+        <button class="btn small move-up" data-id="${esc(q.id)}" title="上移">↑</button>
+        <button class="btn small move-down" data-id="${esc(q.id)}" title="下移">↓</button>
+      </div>
     </div>`).join('')||'<div class="empty">沒有符合條件的題目</div>';
   document.querySelectorAll('.qrow').forEach(el=>{
-    el.onclick=()=>{selectedId=el.dataset.id;renderQuestionList();renderEditor(selectedId)};
+    el.onclick=e=>{
+      if(e.target.closest('button'))return;
+      selectedId=el.dataset.id;
+      renderQuestionList();
+      renderEditor(selectedId);
+    };
     if(manualSortActive){
-      el.addEventListener('dragstart',e=>{draggedId=el.dataset.id;el.classList.add('dragging');e.dataTransfer.effectAllowed='move'});
-      el.addEventListener('dragend',()=>{el.classList.remove('dragging');document.querySelectorAll('.qrow').forEach(x=>x.classList.remove('drag-over'))});
-      el.addEventListener('dragover',e=>{e.preventDefault();el.classList.add('drag-over')});
-      el.addEventListener('dragleave',()=>el.classList.remove('drag-over'));
-      el.addEventListener('drop',e=>{
-        e.preventDefault();el.classList.remove('drag-over');
-        const targetId=el.dataset.id;
-        if(!draggedId||draggedId===targetId)return;
-        reorderQuestions(draggedId,targetId);
+      const handle=el.querySelector('.drag-handle');
+      handle.addEventListener('pointerdown',e=>{
+        e.preventDefault();
+        e.stopPropagation();
+        beginManualPointerDrag(el,e);
       });
+      handle.addEventListener('click',e=>e.stopPropagation());
     }
-  })
+  });
+  document.querySelectorAll('.move-up').forEach(b=>b.onclick=e=>{
+    e.stopPropagation();
+    moveQuestion(b.dataset.id,-1);
+  });
+  document.querySelectorAll('.move-down').forEach(b=>b.onclick=e=>{
+    e.stopPropagation();
+    moveQuestion(b.dataset.id,1);
+  });
 }
 function esc(v){return htmlEscape(String(v??''))}
 function htmlEscape(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+let pointerDragState=null;
+
+function beginManualPointerDrag(row,e){
+  const sourceId=row.dataset.id;
+  const rect=row.getBoundingClientRect();
+  const ghost=row.cloneNode(true);
+  ghost.style.position='fixed';
+  ghost.style.left=rect.left+'px';
+  ghost.style.top=rect.top+'px';
+  ghost.style.width=rect.width+'px';
+  ghost.style.zIndex='9999';
+  ghost.style.pointerEvents='none';
+  ghost.style.opacity='.9';
+  ghost.style.boxShadow='0 18px 35px rgba(0,0,0,.45)';
+  ghost.classList.add('dragging');
+  document.body.appendChild(ghost);
+
+  row.style.opacity='.35';
+  document.body.style.userSelect='none';
+
+  pointerDragState={
+    sourceId,row,ghost,offsetY:e.clientY-rect.top,targetId:sourceId
+  };
+
+  window.addEventListener('pointermove',onManualPointerMove);
+  window.addEventListener('pointerup',endManualPointerDrag,{once:true});
+  window.addEventListener('pointercancel',endManualPointerDrag,{once:true});
+}
+
+function onManualPointerMove(e){
+  if(!pointerDragState)return;
+  const s=pointerDragState;
+  s.ghost.style.top=(e.clientY-s.offsetY)+'px';
+
+  document.querySelectorAll('.qrow').forEach(x=>x.classList.remove('drag-over'));
+  const under=document.elementFromPoint(e.clientX,e.clientY);
+  const target=under&&under.closest('.qrow');
+  if(target&&target.dataset.id!==s.sourceId){
+    target.classList.add('drag-over');
+    s.targetId=target.dataset.id;
+  }
+}
+
+function endManualPointerDrag(){
+  const s=pointerDragState;
+  if(!s)return;
+  window.removeEventListener('pointermove',onManualPointerMove);
+  document.querySelectorAll('.qrow').forEach(x=>x.classList.remove('drag-over'));
+  s.row.style.opacity='';
+  s.ghost.remove();
+  document.body.style.userSelect='';
+  pointerDragState=null;
+
+  if(s.targetId&&s.targetId!==s.sourceId){
+    reorderQuestions(s.sourceId,s.targetId);
+  }
+}
+
+function moveQuestion(id,delta){
+  const visible=filteredDB();
+  const index=visible.findIndex(q=>q.id===id);
+  const target=visible[index+delta];
+  if(index<0||!target)return;
+  const a=db.find(q=>q.id===id);
+  const b=db.find(q=>q.id===target.id);
+  if(!a||!b)return;
+  const temp=a.order;
+  a.order=b.order;
+  b.order=temp;
+  save(false);
+  renderQuestionList();
+  toast(delta<0?'已上移':'已下移');
+}
 function reorderQuestions(sourceId,targetId){
   const ordered=db.slice().sort((a,b)=>a.order-b.order);
   const from=ordered.findIndex(q=>q.id===sourceId);
@@ -639,7 +729,7 @@ document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelect
 toggleManualSortBtn.onclick=()=>{
   manualSortActive=!manualSortActive;
   document.body.classList.toggle('manual-sort-active',manualSortActive);
-  toggleManualSortBtn.textContent=manualSortActive?'關閉拖曳排序':'開啟拖曳排序';
+  toggleManualSortBtn.textContent=manualSortActive?'關閉手動排序':'開啟手動排序';
   sortMode.value='manual';
   renderQuestionList();
 };
