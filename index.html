@@ -146,6 +146,11 @@ input[type=file]{max-width:340px}
 .game-controls{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 .game-controls .btn{font-size:17px;padding:14px 19px;min-width:130px;border-radius:15px}
 .game-controls .btn.primary{min-width:160px;font-weight:850}
+.segment-play-btn{font-weight:850;border-color:transparent}
+.segment-play-btn.segment-1{background:linear-gradient(135deg,#527dd8,#6f91e8);color:#fff}
+.segment-play-btn.segment-2{background:linear-gradient(135deg,#7b5bc7,#9a72df);color:#fff}
+.segment-play-btn.segment-3{background:linear-gradient(135deg,#218f91,#31afb0);color:#fff}
+.segment-play-btn:hover{filter:brightness(1.08)}
 .answer-screen{
   width:min(980px,100%);
   display:block;
@@ -202,6 +207,12 @@ input[type=file]{max-width:340px}
 }
 .result-rank{font-weight:900;color:var(--accent)}
 .result-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.result-question-list{margin-top:24px;text-align:left;padding:20px;background:linear-gradient(180deg,#182238,#121a2b);border:1px solid rgba(95,118,178,.38);border-radius:17px}
+.result-question-list h3{margin:0 0 12px;font-size:20px}
+.result-question-list ol{margin:0;padding-left:24px;display:grid;gap:9px}
+.result-question-list li{padding:9px 10px;border-bottom:1px solid rgba(95,118,178,.22);line-height:1.45}
+.result-question-list li:last-child{border-bottom:0}
+.result-question-list .song{color:var(--muted);font-size:14px}
 .hidden{display:none!important}
 .notice{padding:10px 12px;border-radius:10px;background:#222a39;color:#dce3f2;margin:10px 0}
 .toast{position:fixed;right:18px;bottom:18px;z-index:100;background:#283248;color:white;padding:12px 16px;border-radius:12px;box-shadow:var(--shadow);display:none}
@@ -298,9 +309,9 @@ input[type=file]{max-width:340px}
       <div class="question-number">第 <span id="gameNo">1</span> 題</div>
       <div id="gameSegmentLabel" class="now-playing">準備播放片段 1</div>
       <div class="game-controls">
-        <button class="btn primary" id="playSeg1">播放片段1</button>
-        <button class="btn" id="playSeg2">片段2</button>
-        <button class="btn" id="playSeg3">片段3</button>
+        <button class="btn segment-play-btn segment-1" id="playSeg1">播放片段 1</button>
+        <button class="btn segment-play-btn segment-2" id="playSeg2">播放片段 2</button>
+        <button class="btn segment-play-btn segment-3" id="playSeg3">播放片段 3</button>
         <button class="btn" id="replayBtn">重播</button>
         <button class="btn" id="hintBtn">提示</button>
         <button class="btn primary" id="revealBtn">公布答案</button>
@@ -312,6 +323,7 @@ input[type=file]{max-width:340px}
       <div id="answerAnime" class="answer-title">動畫名稱</div>
       <div id="answerMeta" class="answer-meta"></div>
       <div class="game-controls">
+        <button class="btn" id="prevQuestionBtn">上一題</button>
         <button class="btn" id="noAnswerBtn">無人答對</button>
         <button class="btn primary" id="nextQuestionBtn">下一題</button>
         <button class="btn danger" id="endGameBtn">結束遊戲</button>
@@ -322,6 +334,7 @@ input[type=file]{max-width:340px}
       <div class="result-title">遊戲結算</div>
       <div id="resultSummary" class="answer-meta"></div>
       <div id="resultList" class="result-list"></div>
+      <div id="resultQuestionList" class="result-question-list"></div>
       <div class="result-actions">
         <button class="btn primary" id="restartGameBtn">再玩一場</button>
         <button class="btn" id="backToSetupBtn">回到設定</button>
@@ -741,7 +754,9 @@ function showGameQuestion(){
   resultScreen.classList.add('hidden');
   questionScreen.classList.remove('hidden');
   answerScreen.classList.remove('show');
-  const q=gameQuestions[gameIndex];gameNo.textContent=gameIndex+1;gameSegmentLabel.textContent='準備播放片段 1';hintDisplay.classList.add('hidden');
+  const q=gameQuestions[gameIndex];gameNo.textContent=gameIndex+1;gameSegmentLabel.textContent='準備播放片段 1';hintDisplay.classList.add('hidden');hintDisplay.textContent='';
+  prevQuestionBtn.disabled=gameIndex===0;prevQuestionBtn.style.opacity=gameIndex===0?'.45':'1';
+  hintBtn.style.display=q.hint&&q.hint.trim()?'inline-block':'none';
   [playSeg1,playSeg2,playSeg3].forEach((b,i)=>{b.style.display=q.segments[i]?'inline-block':'none'});
   currentGameSegment=0;setupGamePlayer(q);renderScores();
 }
@@ -789,6 +804,7 @@ function renderScores(){
     toast(teams[+b.dataset.i].name+' ＋1');
   });
 }
+function previousQuestion(){if(gameIndex<=0)return;gameIndex--;showGameQuestion()}
 function nextQuestion(){if(gameIndex+1>=gameQuestions.length)return endGame();gameIndex++;showGameQuestion()}
 function endGame(){
   clearTimeout(segmentTimer);
@@ -799,6 +815,14 @@ function endGame(){
 
   const total=gameQuestions.length;
   resultSummary.textContent=`共完成 ${Math.min(gameIndex+1,total)} / ${total} 題`;
+
+  resultQuestionList.innerHTML=`
+    <h3>此輪使用的題目清單</h3>
+    <ol>${gameQuestions.map(q=>{
+      const anime=q.animeZh||q.animeJa||q.animeEn||q.originalTitle||'未命名題目';
+      const song=[q.songTitle,q.artist].filter(Boolean).join('／');
+      return `<li><b>${esc(anime)}</b>${song?`<div class="song">${esc(song)}</div>`:''}</li>`;
+    }).join('')}</ol>`;
 
   if(!teams.length){
     resultList.innerHTML='<div class="notice">本場沒有設定隊伍，因此沒有分數紀錄。</div>';
@@ -929,8 +953,8 @@ singleYoutubeUrl.addEventListener('keydown',e=>{
 });
 createTopicBtn.onclick=()=>{const t=newTopicName.value.trim();if(!t)return;if(!topics.includes(t))topics.push(t);newTopicName.value='';save();renderAll()};
 startGameBtn.onclick=startGame;playSeg1.onclick=()=>playGameSegment(0);playSeg2.onclick=()=>playGameSegment(1);playSeg3.onclick=()=>playGameSegment(2);replayBtn.onclick=()=>playGameSegment(currentGameSegment);
-hintBtn.onclick=()=>{const q=gameQuestions[gameIndex];hintDisplay.textContent=q.hint||'這題沒有設定提示';hintDisplay.classList.remove('hidden')};
-revealBtn.onclick=reveal;nextQuestionBtn.onclick=nextQuestion;noAnswerBtn.onclick=nextQuestion;endGameBtn.onclick=endGame;
+hintBtn.onclick=()=>{const q=gameQuestions[gameIndex];if(!q.hint||!q.hint.trim())return;hintDisplay.textContent=q.hint.trim();hintDisplay.classList.remove('hidden')};
+revealBtn.onclick=reveal;prevQuestionBtn.onclick=previousQuestion;nextQuestionBtn.onclick=nextQuestion;noAnswerBtn.onclick=nextQuestion;endGameBtn.onclick=endGame;
 restartGameBtn.onclick=()=>{resultScreen.classList.add('hidden');gameIndex=0;teams=teams.map(t=>({name:t.name,score:0,type:t.type||'team'}));gameQuestions=shuffle(gameQuestions.slice());showGameQuestion()};
 backToSetupBtn.onclick=()=>{resultScreen.classList.add('hidden');gameStage.classList.add('hidden');gameSetup.classList.remove('hidden')};
 importJsonBtn.onclick=importJson;exportBtn.onclick=exportDB;
