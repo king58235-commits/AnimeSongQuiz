@@ -6,29 +6,58 @@
 <title>動畫猜歌主持台</title>
 <style>
 :root{
-  --bg:#10131a;--panel:#191e28;--panel2:#222938;--text:#f6f7fb;--muted:#aab2c4;
-  --accent:#7c9cff;--accent2:#9f7cff;--danger:#ff6b7a;--ok:#55d6a8;--warn:#ffcc66;
-  --border:#30394b;--shadow:0 14px 35px rgba(0,0,0,.25);--radius:18px;
+  --bg:#0b1020;--panel:#141b2d;--panel2:#1c2740;--panel3:#24304d;
+  --text:#f7f9ff;--muted:#aeb8d0;--accent:#7da7ff;--accent2:#a47dff;--accent3:#63d8ff;
+  --danger:#e98494;--ok:#78d7a6;--warn:#f4c66d;--border:#2c3958;
+  --shadow:0 18px 45px rgba(0,0,0,.32);--shadow-soft:0 10px 24px rgba(0,0,0,.18);--radius:20px;
 }
 *{box-sizing:border-box}
-html,body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif}
+html,body{
+  margin:0;
+  background:
+    radial-gradient(circle at 15% 10%,rgba(125,167,255,.12),transparent 30%),
+    radial-gradient(circle at 85% 20%,rgba(164,125,255,.10),transparent 28%),
+    linear-gradient(180deg,#0a0f1d,#0d1425 55%,#0b1020);
+  color:var(--text);font-family:system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif;min-height:100%;
+}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
-.topbar{position:sticky;top:0;z-index:30;display:flex;gap:10px;align-items:center;padding:12px 16px;background:rgba(16,19,26,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.brand{font-weight:800;margin-right:auto}
-.tabs{display:flex;gap:6px;flex-wrap:wrap}
-.tab,.btn{border:1px solid var(--border);background:var(--panel2);color:var(--text);padding:10px 14px;border-radius:12px}
-.tab.active,.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent}
+.topbar{
+  position:sticky;top:0;z-index:30;display:flex;gap:12px;align-items:center;padding:14px 18px;
+  background:rgba(9,14,27,.84);backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(125,167,255,.18);box-shadow:0 8px 26px rgba(0,0,0,.18)
+}
+.brand{font-weight:900;margin-right:auto;letter-spacing:.02em;font-size:18px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab,.btn{
+  border:1px solid var(--border);background:linear-gradient(180deg,#202a43,#1a2338);
+  color:var(--text);padding:10px 14px;border-radius:13px;transition:.18s ease;box-shadow:0 4px 12px rgba(0,0,0,.10)
+}
+.tab:hover,.btn:hover{transform:translateY(-1px);border-color:#4b5f8e}
+.tab.active,.btn.primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent;
+  box-shadow:0 8px 20px rgba(125,167,255,.28)
+}
 .btn.danger{background:#3a2028;color:#ffb6bf;border-color:#60303d}
 .btn.ghost{background:transparent}
 .btn.small{padding:7px 10px;font-size:13px}
 main{padding:18px;max-width:1500px;margin:auto}
 .view{display:none}.view.active{display:block}
-.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
-.toolbar{display:flex;gap:10px;flex-wrap:wrap;padding:14px;margin-bottom:14px}
+.card{
+  background:linear-gradient(180deg,rgba(22,30,49,.96),rgba(18,25,42,.96));
+  border:1px solid rgba(80,100,150,.34);border-radius:var(--radius);box-shadow:var(--shadow)
+}
+.toolbar{
+  display:flex;gap:10px;flex-wrap:wrap;padding:16px;margin-bottom:16px;
+  background:linear-gradient(180deg,rgba(23,31,51,.98),rgba(16,23,39,.98))
+}
 .toolbar input,.toolbar select{background:#111722;color:var(--text);border:1px solid var(--border);border-radius:10px;padding:10px 12px;min-width:150px}
 .stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
-.stat{padding:12px 15px;background:var(--panel);border:1px solid var(--border);border-radius:14px}
+.stat{
+  padding:13px 16px;background:linear-gradient(180deg,#19233a,#141b2d);
+  border:1px solid rgba(92,112,166,.35);border-radius:15px;box-shadow:var(--shadow-soft)
+}
+.stat b{font-size:19px;color:#dfe7ff}
 .library{display:grid;grid-template-columns:minmax(310px,42%) 1fr;gap:14px;align-items:start}
 .list-panel{overflow:hidden;align-self:start}
 .list-head{padding:12px 14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between}
@@ -36,31 +65,47 @@ main{padding:18px;max-width:1500px;margin:auto}
 .qrow{display:grid;grid-template-columns:28px 74px 1fr auto auto;gap:10px;padding:10px;border-bottom:1px solid #252c3a;align-items:center}
 .qrow.dragging{opacity:.45}
 .qrow.drag-over{outline:3px solid var(--accent);outline-offset:-3px;background:#2a3650}
-.drag-handle{display:grid;place-items:center;color:var(--muted);font-size:20px;user-select:none}
-.manual-sort-active .drag-handle{color:var(--accent);cursor:grab;background:#27324a;border-radius:8px}
-.manual-sort-active .drag-handle:active{cursor:grabbing}
+.drag-handle{display:grid;place-items:center;color:#b9caff;font-size:20px;user-select:none;cursor:grab;background:#293755;border-radius:8px;touch-action:none}
+.drag-handle:active{cursor:grabbing}
 .manual-sort-active .qrow{touch-action:none}
 .order-buttons{display:flex;flex-direction:column;gap:4px}
 .order-buttons button{padding:3px 7px;min-width:34px}
-.qrow:hover,.qrow.selected{background:#252d3c}
-.thumb{width:74px;height:42px;object-fit:cover;border-radius:8px;background:#0b0e14}
-.qtitle{font-size:14px;line-height:1.35}
+.qrow{transition:.15s ease}
+.qrow:hover{background:#1e2943}
+.qrow.selected{
+  background:linear-gradient(90deg,rgba(125,167,255,.18),rgba(164,125,255,.10));
+  box-shadow:inset 3px 0 0 var(--accent)
+}
+.thumb{width:74px;height:42px;object-fit:cover;border-radius:10px;background:#0b0e14;box-shadow:0 5px 14px rgba(0,0,0,.22)}
+.qtitle{font-size:14px;line-height:1.35;font-weight:750}
 .meta{font-size:12px;color:var(--muted);margin-top:4px}
-.badge{display:inline-flex;padding:3px 7px;border-radius:999px;font-size:11px;margin:2px;background:#30394b;color:#d8deea}
-.badge.warn{background:#493d20;color:#ffe09a}.badge.danger{background:#4b252d;color:#ffb4be}.badge.ok{background:#193d33;color:#9ff2d3}
+.badge{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:11px;margin:3px 2px 0;background:#2d3958;color:#dce5ff;border:1px solid rgba(255,255,255,.05)}
+.badge.warn{background:#4a3d24;color:#ffe3a1}
+.badge.danger{background:#4c2932;color:#ffc0c8}
+.badge.ok{background:#1d4035;color:#aaf0d1}
 .editor{padding:16px;overflow:auto}
 .empty{display:grid;place-items:center;min-height:400px;color:var(--muted)}
-.player-wrap{aspect-ratio:16/9;background:#090b10;border-radius:14px;overflow:hidden;margin-bottom:14px}
+.player-wrap{
+  aspect-ratio:16/9;background:#090b10;border-radius:18px;overflow:hidden;margin-bottom:16px;
+  border:1px solid rgba(125,167,255,.20);box-shadow:0 16px 34px rgba(0,0,0,.30)
+}
 #player,#gamePlayer{width:100%;height:100%}
 .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .field{display:flex;flex-direction:column;gap:6px}
 .field.full{grid-column:1/-1}
 label{font-size:13px;color:var(--muted)}
-input,select,textarea{width:100%;background:#111722;color:var(--text);border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+input,select,textarea{
+  width:100%;background:#0f1627;color:var(--text);border:1px solid #334363;border-radius:11px;
+  padding:11px 12px;outline:none;transition:.16s ease
+}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(125,167,255,.13)}
 textarea{min-height:76px;resize:vertical}
 .editor-actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
 .segments{margin-top:16px}
-.segment{border:1px solid var(--border);background:#141925;border-radius:14px;padding:12px;margin-top:10px}
+.segment{
+  border:1px solid rgba(89,110,165,.34);background:linear-gradient(180deg,#192238,#141b2c);
+  border-radius:16px;padding:14px;margin-top:12px;box-shadow:0 8px 18px rgba(0,0,0,.12)
+}
 .segment-head{display:flex;justify-content:space-between;align-items:center}
 .segment-grid{display:grid;grid-template-columns:120px 120px 1fr;gap:8px;margin-top:10px}
 .nudges{display:flex;gap:6px;flex-wrap:wrap}
@@ -72,12 +117,35 @@ input[type=file]{max-width:340px}
 .topic-manager{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .topic-list{padding:16px}
 .game-setup{max-width:780px;margin:auto;padding:20px}
-.game-stage{min-height:calc(100vh - 90px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px}
-.question-screen{width:min(920px,100%);padding:28px;background:radial-gradient(circle at top,#26314a,#10131a 65%);border:1px solid var(--border);border-radius:26px}
-.question-number{font-size:clamp(38px,8vw,80px);font-weight:900}
-.now-playing{font-size:clamp(18px,4vw,28px);color:var(--muted);margin:12px 0 22px}
-.game-controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.game-controls .btn{font-size:18px;padding:14px 18px}
+.game-stage{
+  min-height:calc(100vh - 90px);display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:18px;position:relative;overflow:hidden
+}
+.game-stage:before{
+  content:"";position:fixed;inset:70px 0 0;pointer-events:none;
+  background:
+    radial-gradient(circle at 25% 30%,rgba(99,216,255,.10),transparent 28%),
+    radial-gradient(circle at 75% 35%,rgba(164,125,255,.13),transparent 32%)
+}
+.question-screen{
+  width:min(960px,100%);padding:42px 28px;
+  background:radial-gradient(circle at 50% -10%,rgba(125,167,255,.26),transparent 40%),
+             linear-gradient(180deg,rgba(29,39,65,.98),rgba(14,20,36,.98));
+  border:1px solid rgba(130,157,220,.34);border-radius:30px;
+  box-shadow:0 30px 70px rgba(0,0,0,.38);position:relative;overflow:hidden
+}
+.question-screen:after{
+  content:"ANIME SONG QUIZ";position:absolute;top:18px;left:0;right:0;
+  font-size:12px;letter-spacing:.35em;color:rgba(220,229,255,.42)
+}
+.question-number{
+  font-size:clamp(46px,9vw,92px);font-weight:950;line-height:1;margin-top:18px;
+  text-shadow:0 0 28px rgba(125,167,255,.25)
+}
+.now-playing{font-size:clamp(18px,4vw,28px);color:#c2cce4;margin:18px 0 26px}
+.game-controls{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.game-controls .btn{font-size:17px;padding:14px 19px;min-width:130px;border-radius:15px}
+.game-controls .btn.primary{min-width:160px;font-weight:850}
 .answer-screen{
   width:min(980px,100%);
   display:block;
@@ -94,8 +162,11 @@ input[type=file]{max-width:340px}
   opacity:1;
   pointer-events:auto;
 }
-.answer-title{font-size:clamp(30px,6vw,62px);font-weight:900;margin:14px 0 8px}
-.answer-meta{font-size:clamp(16px,3vw,25px);color:var(--muted);margin-bottom:16px}
+.answer-title{
+  font-size:clamp(32px,6vw,64px);font-weight:950;margin:18px 0 8px;line-height:1.08;
+  text-shadow:0 0 24px rgba(125,167,255,.22)
+}
+.answer-meta{font-size:clamp(16px,3vw,24px);color:#c2cce4;margin-bottom:18px}
 .scorebar{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:14px}
 .team{
   background:linear-gradient(135deg,#f7f9ff,#dfe7ff);
@@ -124,7 +195,11 @@ input[type=file]{max-width:340px}
 .result-screen{width:min(900px,100%);padding:28px;text-align:center}
 .result-title{font-size:clamp(34px,7vw,68px);font-weight:900;margin-bottom:18px}
 .result-list{display:grid;gap:12px;margin:18px 0}
-.result-row{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;background:var(--panel);border:1px solid var(--border);border-radius:16px;font-size:clamp(18px,3vw,28px)}
+.result-row{
+  display:flex;justify-content:space-between;align-items:center;padding:17px 20px;
+  background:linear-gradient(180deg,#1c2740,#151d30);border:1px solid rgba(95,118,178,.38);
+  border-radius:17px;font-size:clamp(18px,3vw,28px);box-shadow:0 8px 18px rgba(0,0,0,.14)
+}
 .result-rank{font-weight:900;color:var(--accent)}
 .result-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
 .hidden{display:none!important}
@@ -179,7 +254,7 @@ input[type=file]{max-width:340px}
       <option value="unorganizedFirst">未整理優先</option>
       <option value="addedDesc">最近新增</option>
     </select>
-    <button class="btn" id="toggleManualSortBtn">開啟手動排序</button>
+    <button class="btn" id="toggleManualSortBtn" disabled>拖曳排序已啟用</button>
     <button class="btn" id="addSingleBtn">＋新增單支影片</button>
   </div>
   <div class="library">
@@ -297,7 +372,7 @@ let segmentTimer=null;
 let gameQuestions=[], gameIndex=0, currentGameSegment=0;
 let teams=[];
 let manualSortActive=false;
-let draggedId=null;
+let pointerDragState=null;
 
 function clone(v){return JSON.parse(JSON.stringify(v))}
 async function load(){
@@ -364,10 +439,9 @@ function filteredDB(){
     const statusMatch=!st||(st==='disabled'?!q.enabled:q.status===st);
     return (!s||blob.includes(s))&&statusMatch&&(!year||String(q.year)===year)&&(!topic||q.topics.includes(topic));
   });
-  const mode=sortMode?.value||'manual';
+  const mode=document.getElementById('sortMode')?.value||'manual';
   const byText=(a,b)=>String(a||'').localeCompare(String(b||''),'zh-Hant',{numeric:true,sensitivity:'base'});
   switch(mode){
-    case 'original': return arr.slice().sort((a,b)=>String(a.id).localeCompare(String(b.id),undefined,{numeric:true}));
     case 'animeAsc': return arr.slice().sort((a,b)=>byText(a.animeZh||a.animeJa||a.animeEn||a.originalTitle,b.animeZh||b.animeJa||b.animeEn||b.originalTitle));
     case 'yearDesc': return arr.slice().sort((a,b)=>(+b.year||0)-(+a.year||0)||byText(a.originalTitle,b.originalTitle));
     case 'yearAsc': return arr.slice().sort((a,b)=>(+a.year||9999)-(+b.year||9999)||byText(a.originalTitle,b.originalTitle));
@@ -397,10 +471,11 @@ function renderFilters(){
   yearFilter.value=keepYear;topicFilter.value=keepTopic;
 }
 function renderQuestionList(){
-  const arr=filteredDB(); resultCount.textContent=arr.length+' 題';
+  const arr=filteredDB();
+  resultCount.textContent=arr.length+' 題';
   questionList.innerHTML=arr.map(q=>`
     <div class="qrow ${q.id===selectedId?'selected':''}" data-id="${esc(q.id)}">
-      <div class="drag-handle" title="拖曳排序">☰</div>
+      <div class="drag-handle" title="按住拖曳">☰</div>
       <img class="thumb" src="${esc(q.thumbnail||('https://i.ytimg.com/vi/'+q.videoId+'/hqdefault.jpg'))}" onerror="this.style.visibility='hidden'">
       <div><div class="qtitle">${esc(q.animeZh||q.originalTitle)}</div><div class="meta">${esc(q.songTitle||q.channel||'尚未整理')}</div>${statusLabel(q)}</div>
       <div class="meta">${q.segments.length}段</div>
@@ -409,38 +484,38 @@ function renderQuestionList(){
         <button class="btn small move-down" data-id="${esc(q.id)}" title="下移">↓</button>
       </div>
     </div>`).join('')||'<div class="empty">沒有符合條件的題目</div>';
+
   document.querySelectorAll('.qrow').forEach(el=>{
     el.onclick=e=>{
-      if(e.target.closest('button'))return;
+      if(e.target.closest('button')||e.target.closest('.drag-handle'))return;
       selectedId=el.dataset.id;
       renderQuestionList();
       renderEditor(selectedId);
     };
-    if(manualSortActive){
-      const handle=el.querySelector('.drag-handle');
-      handle.addEventListener('pointerdown',e=>{
-        e.preventDefault();
-        e.stopPropagation();
-        beginManualPointerDrag(el,e);
-      });
-      handle.addEventListener('click',e=>e.stopPropagation());
-    }
+    const handle=el.querySelector('.drag-handle');
+    handle.addEventListener('mousedown',e=>{
+      e.preventDefault();
+      e.stopPropagation();
+      beginMouseDrag(el,e);
+    });
+    handle.addEventListener('touchstart',e=>{
+      e.preventDefault();
+      e.stopPropagation();
+      const t=e.touches[0];
+      beginTouchDrag(el,t.clientX,t.clientY);
+    },{passive:false});
   });
+
   document.querySelectorAll('.move-up').forEach(b=>b.onclick=e=>{
-    e.stopPropagation();
-    moveQuestion(b.dataset.id,-1);
+    e.stopPropagation();moveQuestion(b.dataset.id,-1);
   });
   document.querySelectorAll('.move-down').forEach(b=>b.onclick=e=>{
-    e.stopPropagation();
-    moveQuestion(b.dataset.id,1);
+    e.stopPropagation();moveQuestion(b.dataset.id,1);
   });
 }
 function esc(v){return htmlEscape(String(v??''))}
 function htmlEscape(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
-let pointerDragState=null;
-
-function beginManualPointerDrag(row,e){
-  const sourceId=row.dataset.id;
+function createDragGhost(row,clientY){
   const rect=row.getBoundingClientRect();
   const ghost=row.cloneNode(true);
   ghost.style.position='fixed';
@@ -449,50 +524,74 @@ function beginManualPointerDrag(row,e){
   ghost.style.width=rect.width+'px';
   ghost.style.zIndex='9999';
   ghost.style.pointerEvents='none';
-  ghost.style.opacity='.9';
-  ghost.style.boxShadow='0 18px 35px rgba(0,0,0,.45)';
-  ghost.classList.add('dragging');
+  ghost.style.opacity='.94';
+  ghost.style.boxShadow='0 18px 35px rgba(0,0,0,.48)';
   document.body.appendChild(ghost);
-
-  row.style.opacity='.35';
+  row.classList.add('dragging');
   document.body.style.userSelect='none';
-
-  pointerDragState={
-    sourceId,row,ghost,offsetY:e.clientY-rect.top,targetId:sourceId
-  };
-
-  window.addEventListener('pointermove',onManualPointerMove);
-  window.addEventListener('pointerup',endManualPointerDrag,{once:true});
-  window.addEventListener('pointercancel',endManualPointerDrag,{once:true});
+  return {sourceId:row.dataset.id,row,ghost,offsetY:clientY-rect.top,targetId:row.dataset.id};
 }
 
-function onManualPointerMove(e){
-  if(!pointerDragState)return;
+function updateDragPosition(clientX,clientY){
   const s=pointerDragState;
-  s.ghost.style.top=(e.clientY-s.offsetY)+'px';
+  if(!s)return;
+  s.ghost.style.top=(clientY-s.offsetY)+'px';
+
+  const list=questionList;
+  const listRect=list.getBoundingClientRect();
+  const edge=48;
+  if(clientY<listRect.top+edge)list.scrollTop-=14;
+  else if(clientY>listRect.bottom-edge)list.scrollTop+=14;
 
   document.querySelectorAll('.qrow').forEach(x=>x.classList.remove('drag-over'));
-  const under=document.elementFromPoint(e.clientX,e.clientY);
-  const target=under&&under.closest('.qrow');
-  if(target&&target.dataset.id!==s.sourceId){
+  const rows=[...document.querySelectorAll('.qrow')].filter(x=>x.dataset.id!==s.sourceId);
+  let target=null;
+  for(const row of rows){
+    const r=row.getBoundingClientRect();
+    if(clientY<r.top+r.height/2){target=row;break;}
+  }
+  if(!target&&rows.length)target=rows[rows.length-1];
+  if(target){
     target.classList.add('drag-over');
     s.targetId=target.dataset.id;
   }
 }
 
-function endManualPointerDrag(){
+function finishDrag(){
   const s=pointerDragState;
   if(!s)return;
-  window.removeEventListener('pointermove',onManualPointerMove);
+  document.removeEventListener('mousemove',onMouseDragMove);
+  document.removeEventListener('mouseup',finishDrag);
+  document.removeEventListener('touchmove',onTouchDragMove);
+  document.removeEventListener('touchend',finishDrag);
+  document.removeEventListener('touchcancel',finishDrag);
   document.querySelectorAll('.qrow').forEach(x=>x.classList.remove('drag-over'));
-  s.row.style.opacity='';
+  s.row.classList.remove('dragging');
   s.ghost.remove();
   document.body.style.userSelect='';
   pointerDragState=null;
+  if(s.targetId&&s.targetId!==s.sourceId)reorderQuestions(s.sourceId,s.targetId);
+}
 
-  if(s.targetId&&s.targetId!==s.sourceId){
-    reorderQuestions(s.sourceId,s.targetId);
-  }
+function beginMouseDrag(row,e){
+  pointerDragState=createDragGhost(row,e.clientY);
+  document.addEventListener('mousemove',onMouseDragMove);
+  document.addEventListener('mouseup',finishDrag);
+}
+function onMouseDragMove(e){
+  e.preventDefault();
+  updateDragPosition(e.clientX,e.clientY);
+}
+function beginTouchDrag(row,clientX,clientY){
+  pointerDragState=createDragGhost(row,clientY);
+  document.addEventListener('touchmove',onTouchDragMove,{passive:false});
+  document.addEventListener('touchend',finishDrag);
+  document.addEventListener('touchcancel',finishDrag);
+}
+function onTouchDragMove(e){
+  e.preventDefault();
+  const t=e.touches[0];
+  updateDragPosition(t.clientX,t.clientY);
 }
 
 function moveQuestion(id,delta){
@@ -533,6 +632,7 @@ function renderEditor(id){
       <button class="btn danger" id="deleteQuestion">刪除題目</button>
       <a class="btn ghost" href="${esc(q.url)}" target="_blank">YouTube開啟</a>
     </div>
+    <h3 style="margin:6px 0 12px;color:#dfe7ff">題目資料</h3>
     <div class="form-grid">
       <div class="field full"><label>YouTube原始標題</label><input id="fOriginalTitle" value="${esc(q.originalTitle)}"></div>
       <div class="field"><label>動畫中文名</label><input id="fAnimeZh" value="${esc(q.animeZh)}"></div>
@@ -738,6 +838,41 @@ function addSingle(){
   const url=prompt('貼上 YouTube 影片網址：');
   if(url)createSingleQuestion(url.trim());
 }
+function makeBlankQuestion(overrides={}){
+  return {
+    id:'q_'+Date.now()+'_'+Math.random().toString(36).slice(2,8),
+    videoId:'',
+    url:'',
+    originalTitle:'待整理的新影片',
+    channel:'',
+    thumbnail:'',
+    duration:0,
+    animeZh:'',
+    animeJa:'',
+    animeEn:'',
+    year:'',
+    season:'',
+    seriesPart:'',
+    songTitle:'',
+    artist:'',
+    songType:'',
+    songIndex:'',
+    hint:'',
+    notes:'',
+    topics:[],
+    enabled:true,
+    status:'unorganized',
+    videoStatus:'unknown',
+    addedAt:new Date().toISOString().slice(0,10),
+    firstPlayedYear:'',
+    lastPlayedYear:'',
+    playCount:0,
+    order:db.length,
+    segments:[{start:0,length:7,enabled:true}],
+    ...overrides
+  };
+}
+
 async function importJson(){
   const f=jsonFile.files[0];if(!f)return alert('請先選擇 JSON');
   try{
@@ -746,8 +881,19 @@ async function importJson(){
     else if(Array.isArray(obj.questions)){topics=Array.isArray(obj.topics)?obj.topics:topics;incoming=obj.questions;}
     else if(Array.isArray(obj.entries))incoming=obj.entries.map((e,i)=>({videoId:e.id||extractVideoId(e.url),url:e.url||'',originalTitle:e.title||'(標題缺失)',channel:e.channel||e.uploader||'',thumbnail:(e.thumbnails&&e.thumbnails.length?e.thumbnails[e.thumbnails.length-1].url:''),duration:e.duration||0,segments:[{start:0,length:7,enabled:true}]}));
     else throw new Error('格式不支援');
-    const before=db.length;incoming.forEach((x,i)=>{const vid=x.videoId||extractVideoId(x.url);db.push({...clone(SEED[0]),...x,id:x.id||('q_'+(vid||Date.now())+'_'+i),videoId:vid,url:x.url||('https://www.youtube.com/watch?v='+vid)})});
-    normalizeDB();detectDuplicates();save();renderAll();alert(`匯入完成：新增 ${db.length-before} 筆；重複項目已標示。`)
+    const before=db.length;
+    incoming.forEach((x,i)=>{
+      const vid=x.videoId||extractVideoId(x.url);
+      db.push(makeBlankQuestion({
+        ...x,
+        id:x.id||('q_'+(vid||Date.now())+'_'+i),
+        videoId:vid,
+        url:x.url||(vid?'https://www.youtube.com/watch?v='+vid:''),
+        order:db.length+i
+      }));
+    });
+    normalizeDB();detectDuplicates();save();renderAll();
+    alert(`匯入完成：新增 ${db.length-before} 筆；重複項目已標示。`)
   }catch(e){alert('匯入失敗：'+e.message)}
 }
 function exportDB(){
@@ -756,13 +902,7 @@ function exportDB(){
 }
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.view).classList.add('active')});
 [searchInput,statusFilter,yearFilter,topicFilter,sortMode].forEach(el=>el.addEventListener(el.tagName==='INPUT'?'input':'change',renderQuestionList));
-toggleManualSortBtn.onclick=()=>{
-  manualSortActive=!manualSortActive;
-  document.body.classList.toggle('manual-sort-active',manualSortActive);
-  toggleManualSortBtn.textContent=manualSortActive?'關閉手動排序':'開啟手動排序';
-  sortMode.value='manual';
-  renderQuestionList();
-};
+toggleManualSortBtn.onclick=()=>{};
 markDuplicatesBtn.onclick=()=>{db.forEach(q=>{if(q.status==='duplicate')q.status='unorganized'});detectDuplicates();save();renderAll()};
 addSingleBtn.onclick=addSingle;
 importSingleYoutubeBtn.onclick=()=>{
