@@ -687,7 +687,7 @@ function commitEditor(q,show=true){
   q.year=fYear.value.trim();q.season=fSeason.value;q.seriesPart=fSeriesPart.value.trim();q.songTitle=fSongTitle.value.trim();q.artist=fArtist.value.trim();
   q.songType=fSongType.value;q.songIndex=fSongIndex.value.trim();q.hint=fHint.value.trim();q.notes=fNotes.value.trim();
   q.topics=[...document.querySelectorAll('#editorTopics input:checked')].map(x=>x.value);
-  q.status=(q.animeZh||q.animeJa||q.animeEn)&&q.songTitle&&q.year?'organized':(q.status==='duplicate'?'duplicate':'unorganized');
+  q.status=(q.animeZh||q.animeJa||q.animeEn)&&q.songTitle?'organized':(q.status==='duplicate'?'duplicate':'unorganized');
   save(show);renderAll();
 }
 function selectNext(id){const arr=filteredDB();const i=arr.findIndex(q=>q.id===id);if(arr[i+1]){selectedId=arr[i+1].id;renderQuestionList();renderEditor(selectedId)}}
