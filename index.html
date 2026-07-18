@@ -656,12 +656,19 @@ function renderEditor(id){
   saveNext.onclick=()=>{commitEditor(q,false);selectNext(q.id)};
   toggleEnabled.onclick=()=>{q.enabled=!q.enabled;save();renderAll()};
   deleteQuestion.onclick=()=>{if(confirm('確定刪除這題？')){db=db.filter(x=>x.id!==q.id);selectedId=null;save();editor.innerHTML='<div class="empty">題目已刪除</div>';renderAll()}};
-  addSegment.onclick=()=>{if(q.segments.length<3){q.segments.push({start:0,length:7,enabled:true});renderSegments(q)}}
+  addSegment.onclick=()=>{if(q.segments.length<3){syncSegments(q);q.segments.push({start:0,length:7,enabled:true});renderSegments(q)}}
 }
 function renderSegments(q){
   segmentsBox.innerHTML=q.segments.map((s,i)=>`
   <div class="segment">
-    <div class="segment-head"><b>片段 ${i+1}</b><button class="btn small danger seg-delete" data-i="${i}" ${q.segments.length===1?'disabled':''}>刪除</button></div>
+    <div class="segment-head">
+      <b>片段 ${i+1}</b>
+      <div class="order-buttons" style="flex-direction:row">
+        <button class="btn small seg-move" data-i="${i}" data-dir="-1" ${i===0?'disabled':''}>上移</button>
+        <button class="btn small seg-move" data-i="${i}" data-dir="1" ${i===q.segments.length-1?'disabled':''}>下移</button>
+        <button class="btn small danger seg-delete" data-i="${i}" ${q.segments.length===1?'disabled':''}>刪除</button>
+      </div>
+    </div>
     <div class="segment-grid">
       <div class="field"><label>起點（秒）</label><input class="seg-start" data-i="${i}" type="number" step=".1" min="0" value="${s.start}"></div>
       <div class="field"><label>長度（秒）</label><input class="seg-length" data-i="${i}" type="number" step=".5" min="1" max="60" value="${s.length}"></div>
@@ -673,7 +680,14 @@ function renderSegments(q){
       </div>
     </div>
   </div>`).join('');
-  document.querySelectorAll('.seg-delete').forEach(b=>b.onclick=()=>{q.segments.splice(+b.dataset.i,1);renderSegments(q)});
+  document.querySelectorAll('.seg-delete').forEach(b=>b.onclick=()=>{syncSegments(q);q.segments.splice(+b.dataset.i,1);renderSegments(q)});
+  document.querySelectorAll('.seg-move').forEach(b=>b.onclick=()=>{
+    syncSegments(q);
+    const from=+b.dataset.i,to=from+(+b.dataset.dir);
+    if(to<0||to>=q.segments.length)return;
+    [q.segments[from],q.segments[to]]=[q.segments[to],q.segments[from]];
+    renderSegments(q);
+  });
   document.querySelectorAll('.nudge').forEach(b=>b.onclick=()=>{const inp=document.querySelector(`.seg-start[data-i="${b.dataset.i}"]`);inp.value=Math.max(0,(+inp.value||0)+(+b.dataset.v))});
   document.querySelectorAll('.set-current').forEach(b=>b.onclick=()=>{if(player&&player.getCurrentTime){document.querySelector(`.seg-start[data-i="${b.dataset.i}"]`).value=player.getCurrentTime().toFixed(1)}});
   document.querySelectorAll('.test-seg').forEach(b=>b.onclick=()=>testSegment(+b.dataset.i));
