@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "exportedAt": "2026-08-01T08:33:42.463Z",
+  "exportedAt": "2026-08-01T09:09:43.333Z",
   "topics": [],
   "questions": [
     {
@@ -28,9 +28,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-08-01",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 316,
       "segments": [
         {
@@ -107,9 +107,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 1,
       "segments": [
         {
@@ -248,9 +248,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 3,
       "segments": [
         {
@@ -297,7 +297,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 2,
+      "playCount": 3,
       "order": 4,
       "segments": [
         {
@@ -343,12 +343,12 @@
       "order": 5,
       "segments": [
         {
-          "start": 0,
+          "start": 50,
           "length": 10,
           "enabled": true
         },
         {
-          "start": 50,
+          "start": 0,
           "length": 10,
           "enabled": true
         },
@@ -793,13 +793,13 @@
       "order": 16,
       "segments": [
         {
-          "start": 0,
-          "length": 8,
+          "start": 18.5,
+          "length": 7,
           "enabled": true
         },
         {
-          "start": 18.5,
-          "length": 7,
+          "start": 0,
+          "length": 8,
           "enabled": true
         },
         {
@@ -1672,7 +1672,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 37,
       "segments": [
         {
@@ -2172,9 +2172,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 49,
       "segments": [
         {
@@ -2822,7 +2822,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 2,
+      "playCount": 3,
       "order": 63,
       "segments": [
         {
@@ -4106,9 +4106,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 92,
       "segments": [
         {
@@ -5466,7 +5466,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 2,
+      "playCount": 3,
       "order": 122,
       "segments": [
         {
@@ -5835,9 +5835,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 130,
       "segments": [
         {
@@ -6151,7 +6151,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 137,
       "segments": [
         {
@@ -6327,9 +6327,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 141,
       "segments": [
         {
@@ -6446,7 +6446,7 @@
       "channel": "天海☆彡",
       "thumbnail": "https://i.ytimg.com/vi/Aw192XYfEeM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC6OOyWrwVXSPzlEX_aJVYdP8y3mQ",
       "duration": 182,
-      "animeZh": "",
+      "animeZh": "我獨自升級",
       "animeJa": "我獨自升級 S2",
       "animeEn": "",
       "year": "",
@@ -6470,6 +6470,11 @@
       "segments": [
         {
           "start": 0,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 36,
           "length": 7,
           "enabled": true
         }
@@ -6725,7 +6730,7 @@
       "channel": "May'n",
       "thumbnail": "https://i.ytimg.com/vi/fGGTf044UPI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBFRDzM4HQAwXYkmzMBRrirKgFdgw",
       "duration": 304,
-      "animeZh": "要塞F",
+      "animeZh": "超時空要塞F",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -6880,6 +6885,11 @@
       "segments": [
         {
           "start": 0,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 49,
           "length": 7,
           "enabled": true
         }
@@ -7089,7 +7099,7 @@
       "thumbnail": "https://i.ytimg.com/vi/6H_0O80AeOs/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARgTICAofzAP&rs=AOn4CLD8eOFGPqy5YLerNeZ3q3AnlZfR3w",
       "duration": 92,
       "animeZh": "",
-      "animeJa": "Altima Burst The Gravity アクセル・ワールド",
+      "animeJa": "アクセル・ワールド",
       "animeEn": "",
       "year": "",
       "season": "",
@@ -7322,7 +7332,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 2,
+      "playCount": 3,
       "order": 166,
       "segments": [
         {
@@ -7833,6 +7843,11 @@
           "start": 0,
           "length": 7,
           "enabled": true
+        },
+        {
+          "start": 45,
+          "length": 7,
+          "enabled": true
         }
       ]
     },
@@ -8011,7 +8026,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 2,
+      "playCount": 3,
       "order": 184,
       "segments": [
         {
@@ -8224,9 +8239,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 189,
       "segments": [
         {
@@ -8466,6 +8481,11 @@
       "playCount": 2,
       "order": 195,
       "segments": [
+        {
+          "start": 0,
+          "length": 7,
+          "enabled": true
+        },
         {
           "start": 0,
           "length": 7,
@@ -8907,6 +8927,11 @@
           "start": 0,
           "length": 7,
           "enabled": true
+        },
+        {
+          "start": 62,
+          "length": 7,
+          "enabled": true
         }
       ]
     },
@@ -9204,13 +9229,13 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 214,
       "segments": [
         {
-          "start": 0,
+          "start": 17,
           "length": 7,
           "enabled": true
         }
@@ -9373,7 +9398,7 @@
           "enabled": true
         },
         {
-          "start": 0,
+          "start": 6,
           "length": 7,
           "enabled": true
         }
@@ -10221,7 +10246,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 239,
       "segments": [
         {
@@ -10486,7 +10511,7 @@
       "channel": "BJac2018",
       "thumbnail": "https://i.ytimg.com/vi/p6Ao0FFtdhQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCUR94oO9f9vBsbYAKmhH_Adac-Ag",
       "duration": 244,
-      "animeZh": "",
+      "animeZh": "寒蟬鳴泣之時",
       "animeJa": "寒蟬鳴泣之時 擴",
       "animeEn": "",
       "year": "",
@@ -10510,6 +10535,11 @@
       "segments": [
         {
           "start": 0,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 40,
           "length": 7,
           "enabled": true
         }
@@ -11431,9 +11461,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 271,
       "segments": [
         {
@@ -12585,13 +12615,13 @@
       "order": 303,
       "segments": [
         {
-          "start": 0,
-          "length": 90,
+          "start": 54,
+          "length": 7,
           "enabled": true
         },
         {
-          "start": 54,
-          "length": 7,
+          "start": 0,
+          "length": 90,
           "enabled": true
         }
       ]
@@ -12930,9 +12960,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 311,
       "segments": [
         {
