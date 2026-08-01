@@ -315,6 +315,7 @@ input[type=file]{max-width:340px}
         <button class="btn segment-play-btn segment-3" id="playSeg3">播放片段 3</button>
         <button class="btn" id="replayBtn">重播</button>
         <button class="btn" id="hintBtn">提示</button>
+        <button class="btn" id="editCurrentQuestionBtn">編輯目前題目</button>
         <button class="btn primary" id="revealBtn">公布答案</button>
       </div>
       <div id="hintDisplay" class="notice hidden"></div>
@@ -325,6 +326,7 @@ input[type=file]{max-width:340px}
       <div id="answerMeta" class="answer-meta"></div>
       <div class="game-controls">
         <button class="btn" id="prevQuestionBtn">上一題</button>
+        <button class="btn" id="editAnswerQuestionBtn">編輯目前題目</button>
         <button class="btn" id="noAnswerBtn">無人答對</button>
         <button class="btn primary" id="nextQuestionBtn">下一題</button>
         <button class="btn danger" id="endGameBtn">結束遊戲</button>
@@ -843,6 +845,22 @@ function renderScores(){
     toast(teams[+b.dataset.i].name+' ＋1');
   });
 }
+function openCurrentQuestionInLibrary(){
+  const q=gameQuestions[gameIndex];
+  if(!q)return;
+  clearTimeout(segmentTimer);
+  if(gamePlayer&&gamePlayer.pauseVideo)gamePlayer.pauseVideo();
+  selectedId=q.id;
+  document.querySelector('[data-view="libraryView"]').click();
+  renderQuestionList();
+  renderEditor(q.id);
+  requestAnimationFrame(()=>{
+    const row=document.querySelector(`.qrow[data-id="${CSS.escape(q.id)}"]`);
+    if(row)row.scrollIntoView({block:'center',behavior:'smooth'});
+  });
+  toast('已開啟目前題目，可修改後再回到「開始遊戲」');
+}
+
 function previousQuestion(){if(gameIndex<=0)return;gameIndex--;showGameQuestion()}
 function nextQuestion(){if(gameIndex+1>=gameQuestions.length)return endGame();gameIndex++;showGameQuestion()}
 function endGame(){
@@ -1016,6 +1034,7 @@ clearHistoryBtn.onclick=()=>{
 };
 playSeg1.onclick=()=>playGameSegment(0);playSeg2.onclick=()=>playGameSegment(1);playSeg3.onclick=()=>playGameSegment(2);replayBtn.onclick=()=>playGameSegment(currentGameSegment);
 hintBtn.onclick=()=>{const q=gameQuestions[gameIndex];if(!q.hint||!q.hint.trim())return;hintDisplay.textContent=q.hint.trim();hintDisplay.classList.remove('hidden')};
+editCurrentQuestionBtn.onclick=openCurrentQuestionInLibrary;editAnswerQuestionBtn.onclick=openCurrentQuestionInLibrary;
 revealBtn.onclick=reveal;prevQuestionBtn.onclick=previousQuestion;nextQuestionBtn.onclick=nextQuestion;noAnswerBtn.onclick=nextQuestion;endGameBtn.onclick=endGame;
 restartGameBtn.onclick=()=>{
   const nextSet=buildGameQuestionSet();
