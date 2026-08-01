@@ -1,51 +1,46 @@
 {
   "version": 1,
-  "exportedAt": "2026-07-19T12:51:21.452Z",
+  "exportedAt": "2026-08-01T07:15:09.646Z",
   "topics": [],
   "questions": [
     {
-      "id": "q_k7RgHuqffS8_1784405260994",
-      "videoId": "k7RgHuqffS8",
-      "url": "https://www.youtube.com/watch?v=k7RgHuqffS8",
-      "originalTitle": "dream--my will--犬夜叉主题曲",
+      "id": "q_ZMWT8Bi9SKs_1785565783608",
+      "videoId": "ZMWT8Bi9SKs",
+      "url": "https://www.youtube.com/watch?v=ZMWT8Bi9SKs",
+      "originalTitle": "ゆずれない願い - 田村直美 【魔法騎士レイアース】 cover by Seira",
       "channel": "",
-      "thumbnail": "https://i.ytimg.com/vi/k7RgHuqffS8/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/ZMWT8Bi9SKs/hqdefault.jpg",
       "duration": 0,
-      "animeZh": "犬夜叉",
+      "animeZh": "魔法騎士雷阿斯",
       "animeJa": "",
       "animeEn": "",
       "year": "",
       "season": "",
       "seriesPart": "",
-      "songTitle": "My will",
-      "artist": "dream",
-      "songType": "ED",
-      "songIndex": "ED1",
+      "songTitle": "ゆずれない願い",
+      "artist": "",
+      "songType": "OP",
+      "songIndex": "",
       "hint": "",
       "notes": "",
       "topics": [],
       "enabled": true,
       "status": "organized",
       "videoStatus": "unknown",
-      "addedAt": "2026-07-18",
+      "addedAt": "2026-08-01",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
-      "order": 327,
+      "playCount": 2,
+      "order": 318,
       "segments": [
         {
           "start": 0,
-          "length": 7.5,
-          "enabled": true
-        },
-        {
-          "start": 8,
           "length": 7,
           "enabled": true
         },
         {
-          "start": 53,
-          "length": 30,
+          "start": 65,
+          "length": 7,
           "enabled": true
         }
       ]
@@ -169,9 +164,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 2,
       "segments": [
         {
@@ -263,9 +258,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 4,
       "segments": [
         {
@@ -446,9 +441,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 8,
       "segments": [
         {
@@ -535,9 +530,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 10,
       "segments": [
         {
@@ -582,9 +577,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 11,
       "segments": [
         {
@@ -713,9 +708,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 15,
       "segments": [
         {
@@ -757,7 +752,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 16,
       "segments": [
         {
@@ -802,9 +797,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 17,
       "segments": [
         {
@@ -896,9 +891,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 19,
       "segments": [
         {
@@ -1037,9 +1032,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 23,
       "segments": [
         {
@@ -1079,9 +1074,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 24,
       "segments": [
         {
@@ -1173,9 +1168,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 26,
       "segments": [
         {
@@ -1238,53 +1233,6 @@
         {
           "start": 62,
           "length": 11,
-          "enabled": true
-        }
-      ]
-    },
-    {
-      "id": "q_lWo0ryY_K2A",
-      "videoId": "lWo0ryY_K2A",
-      "url": "https://www.youtube.com/watch?v=lWo0ryY_K2A",
-      "originalTitle": "Magic Knight Rayearth OP ゆずれない願い (2020ver) AI 4K (MAD) (Memories series)",
-      "channel": "沙理戰-MAD·AMV",
-      "thumbnail": "https://i.ytimg.com/vi/lWo0ryY_K2A/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBgYtOadGRJRwavLnLmZ0XlYNwcnw",
-      "duration": 233,
-      "animeZh": "魔法騎士雷阿斯",
-      "animeJa": "",
-      "animeEn": "Magic Knight Rayearth",
-      "year": "",
-      "season": "",
-      "seriesPart": "",
-      "songTitle": "ゆずれない願い (2020ver)",
-      "artist": "",
-      "songType": "OP",
-      "songIndex": "OP",
-      "hint": "",
-      "notes": "自動整理可信度：high",
-      "topics": [],
-      "enabled": true,
-      "status": "organized",
-      "videoStatus": "unknown",
-      "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
-      "order": 28,
-      "segments": [
-        {
-          "start": 50,
-          "length": 9,
-          "enabled": true
-        },
-        {
-          "start": 24,
-          "length": 8,
-          "enabled": true
-        },
-        {
-          "start": 63,
-          "length": 10,
           "enabled": true
         }
       ]
@@ -1408,9 +1356,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 31,
       "segments": [
         {
@@ -1455,9 +1403,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 32,
       "segments": [
         {
@@ -1504,7 +1452,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 33,
       "segments": [
         {
@@ -1591,9 +1539,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 35,
       "segments": [
         {
@@ -1638,9 +1586,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 36,
       "segments": [
         {
@@ -1685,9 +1633,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 37,
       "segments": [
         {
@@ -1732,9 +1680,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 38,
       "segments": [
         {
@@ -1779,9 +1727,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 3,
       "order": 39,
       "segments": [
         {
@@ -1826,9 +1774,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 40,
       "segments": [
         {
@@ -1922,7 +1870,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 42,
       "segments": [
         {
@@ -1962,9 +1910,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 43,
       "segments": [
         {
@@ -2009,9 +1957,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 44,
       "segments": [
         {
@@ -2098,9 +2046,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 46,
       "segments": [
         {
@@ -2142,7 +2090,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 48,
       "segments": [
         {
@@ -2234,9 +2182,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 50,
       "segments": [
         {
@@ -2323,9 +2271,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 52,
       "segments": [
         {
@@ -2417,9 +2365,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 54,
       "segments": [
         {
@@ -2605,9 +2553,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 58,
       "segments": [
         {
@@ -2699,9 +2647,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 60,
       "segments": [
         {
@@ -2795,7 +2743,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 62,
       "segments": [
         {
@@ -2837,7 +2785,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 63,
       "segments": [
         {
@@ -2882,9 +2830,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 64,
       "segments": [
         {
@@ -2929,9 +2877,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 65,
       "segments": [
         {
@@ -3018,9 +2966,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 67,
       "segments": [
         {
@@ -3065,9 +3013,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 68,
       "segments": [
         {
@@ -3110,11 +3058,11 @@
       "topics": [],
       "enabled": true,
       "status": "organized",
-      "videoStatus": "unknown",
+      "videoStatus": "broken",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 69,
       "segments": [
         {
@@ -3161,7 +3109,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 2,
+      "playCount": 3,
       "order": 70,
       "segments": [
         {
@@ -3206,9 +3154,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 71,
       "segments": [
         {
@@ -3295,9 +3243,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 73,
       "segments": [
         {
@@ -3342,9 +3290,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 74,
       "segments": [
         {
@@ -3391,7 +3339,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 2,
+      "playCount": 3,
       "order": 75,
       "segments": [
         {
@@ -3431,9 +3379,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 76,
       "segments": [
         {
@@ -3567,9 +3515,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 79,
       "segments": [
         {
@@ -3614,9 +3562,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 80,
       "segments": [
         {
@@ -3708,9 +3656,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 82,
       "segments": [
         {
@@ -3750,9 +3698,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 83,
       "segments": [
         {
@@ -3797,9 +3745,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 84,
       "segments": [
         {
@@ -3886,9 +3834,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 86,
       "segments": [
         {
@@ -3933,9 +3881,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 87,
       "segments": [
         {
@@ -3980,9 +3928,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 88,
       "segments": [
         {
@@ -4027,9 +3975,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 89,
       "segments": [
         {
@@ -4121,9 +4069,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 91,
       "segments": [
         {
@@ -4215,9 +4163,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 93,
       "segments": [
         {
@@ -4262,9 +4210,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 94,
       "segments": [
         {
@@ -4309,9 +4257,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 95,
       "segments": [
         {
@@ -4358,7 +4306,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 96,
       "segments": [
         {
@@ -4497,9 +4445,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 99,
       "segments": [
         {
@@ -4544,9 +4492,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 100,
       "segments": [
         {
@@ -4591,9 +4539,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 101,
       "segments": [
         {
@@ -4638,9 +4586,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 3,
       "order": 102,
       "segments": [
         {
@@ -4779,9 +4727,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 105,
       "segments": [
         {
@@ -4873,9 +4821,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 107,
       "segments": [
         {
@@ -4922,7 +4870,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 2,
+      "playCount": 3,
       "order": 108,
       "segments": [
         {
@@ -4969,7 +4917,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 110,
       "segments": [
         {
@@ -5014,9 +4962,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 111,
       "segments": [
         {
@@ -5061,9 +5009,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 112,
       "segments": [
         {
@@ -5108,9 +5056,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 113,
       "segments": [
         {
@@ -5202,9 +5150,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 3,
       "order": 115,
       "segments": [
         {
@@ -5343,9 +5291,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 118,
       "segments": [
         {
@@ -5390,9 +5338,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 119,
       "segments": [
         {
@@ -5432,9 +5380,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 120,
       "segments": [
         {
@@ -5526,9 +5474,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 122,
       "segments": [
         {
@@ -5568,9 +5516,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 123,
       "segments": [
         {
@@ -5662,9 +5610,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 3,
       "order": 125,
       "segments": [
         {
@@ -5756,9 +5704,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 127,
       "segments": [
         {
@@ -5986,9 +5934,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 132,
       "segments": [
         {
@@ -6033,9 +5981,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 133,
       "segments": [
         {
@@ -6127,9 +6075,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 135,
       "segments": [
         {
@@ -6174,9 +6122,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 136,
       "segments": [
         {
@@ -6211,9 +6159,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 137,
       "segments": [
         {
@@ -6436,9 +6384,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 142,
       "segments": [
         {
@@ -6483,9 +6431,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 143,
       "segments": [
         {
@@ -6525,9 +6473,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 144,
       "segments": [
         {
@@ -6673,9 +6621,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 148,
       "segments": [
         {
@@ -6730,7 +6678,7 @@
       "channel": "Zain",
       "thumbnail": "https://i.ytimg.com/vi/bUDp4tF8Hbo/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBtthe7eu7k3FAr-cXo4TotMj-ADA",
       "duration": 222,
-      "animeZh": "",
+      "animeZh": "寄生獸",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -6738,7 +6686,7 @@
       "seriesPart": "",
       "songTitle": "",
       "artist": "",
-      "songType": "",
+      "songType": "OP",
       "songIndex": "",
       "hint": "",
       "notes": "自動整理可信度：low",
@@ -6747,11 +6695,16 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 150,
       "segments": [
+        {
+          "start": 60,
+          "length": 7,
+          "enabled": true
+        },
         {
           "start": 0,
           "length": 7,
@@ -6804,7 +6757,7 @@
       "channel": "musoforlyf",
       "thumbnail": "https://i.ytimg.com/vi/atuFSv2bLa8/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARgsIFAofzAP&rs=AOn4CLAr6y8gupKg81Yz09p_yEO6ku1dgQ",
       "duration": 272,
-      "animeZh": "",
+      "animeZh": "頭文字D",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -6821,50 +6774,18 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 152,
       "segments": [
         {
           "start": 0,
           "length": 7,
           "enabled": true
-        }
-      ]
-    },
-    {
-      "id": "q_HG3aV3O6jXQ",
-      "videoId": "HG3aV3O6jXQ",
-      "url": "https://www.youtube.com/watch?v=HG3aV3O6jXQ",
-      "originalTitle": "(標題缺失)",
-      "channel": "",
-      "thumbnail": "https://i.ytimg.com/vi/HG3aV3O6jXQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDuu3uASJ9qLkht3DAC806gFDLftw",
-      "duration": 0,
-      "animeZh": "",
-      "animeJa": "",
-      "animeEn": "",
-      "year": "",
-      "season": "",
-      "seriesPart": "",
-      "songTitle": "",
-      "artist": "",
-      "songType": "",
-      "songIndex": "",
-      "hint": "",
-      "notes": "自動整理可信度：low",
-      "topics": [],
-      "enabled": true,
-      "status": "unorganized",
-      "videoStatus": "unknown",
-      "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
-      "order": 153,
-      "segments": [
+        },
         {
-          "start": 0,
+          "start": 90,
           "length": 7,
           "enabled": true
         }
@@ -6878,30 +6799,35 @@
       "channel": "fripSide OfficiAL YouTube Channnel",
       "thumbnail": "https://i.ytimg.com/vi/W4YbIxlfw8k/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLBfF8EaSW7YRGJKsr-olaCVNrZB4g",
       "duration": 264,
-      "animeZh": "",
+      "animeZh": "科學超電磁砲",
       "animeJa": "",
       "animeEn": "",
       "year": "",
       "season": "",
       "seriesPart": "",
-      "songTitle": "",
+      "songTitle": "LEVEL5-judgelight",
       "artist": "",
-      "songType": "",
+      "songType": "OP",
       "songIndex": "",
       "hint": "",
       "notes": "自動整理可信度：low",
       "topics": [],
       "enabled": true,
-      "status": "unorganized",
+      "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 4,
       "order": 154,
       "segments": [
         {
           "start": 0,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 70,
           "length": 7,
           "enabled": true
         }
@@ -7006,14 +6932,24 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 157,
       "segments": [
         {
+          "start": 45,
+          "length": 5,
+          "enabled": true
+        },
+        {
           "start": 0,
           "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 80,
+          "length": 10,
           "enabled": true
         }
       ]
@@ -7043,9 +6979,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 158,
       "segments": [
         {
@@ -7080,9 +7016,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 159,
       "segments": [
         {
@@ -7228,13 +7164,18 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 3,
       "order": 163,
       "segments": [
         {
           "start": 0,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 56,
           "length": 7,
           "enabled": true
         }
@@ -7304,11 +7245,16 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 165,
       "segments": [
         {
           "start": 0,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 123,
           "length": 7,
           "enabled": true
         }
@@ -7341,7 +7287,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 166,
       "segments": [
         {
@@ -7359,7 +7305,7 @@
       "channel": "Fish Music Share",
       "thumbnail": "https://i.ytimg.com/vi/4UKynKZZZbs/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAH6j42u1MLzW5iZwvUYD_1WpEutQ",
       "duration": 227,
-      "animeZh": "",
+      "animeZh": "真珠美人魚",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -7376,13 +7322,18 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 167,
       "segments": [
         {
           "start": 0,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 14,
           "length": 7,
           "enabled": true
         }
@@ -7598,9 +7549,9 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 173,
       "segments": [
         {
@@ -7692,8 +7643,8 @@
       "channel": "Man Ho Leung",
       "thumbnail": "https://i.ytimg.com/vi/pVXEb_PHk_8/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhPIGUoJzAP&rs=AOn4CLCAB0BRzuRYCPcXHmT6qHAiHfeSjw",
       "duration": 253,
-      "animeZh": "",
-      "animeJa": "〈古典部〉《冰菓》",
+      "animeZh": "冰菓",
+      "animeJa": "",
       "animeEn": "",
       "year": "",
       "season": "",
@@ -7711,11 +7662,16 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 2,
+      "playCount": 3,
       "order": 176,
       "segments": [
         {
           "start": 0,
+          "length": 10,
+          "enabled": true
+        },
+        {
+          "start": 61,
           "length": 7,
           "enabled": true
         }
@@ -7931,9 +7887,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 182,
       "segments": [
         {
@@ -8005,9 +7961,9 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 184,
       "segments": [
         {
@@ -8025,7 +7981,7 @@
       "channel": "【フジテレビ】アニメ公式チャンネル",
       "thumbnail": "https://i.ytimg.com/vi/AwXRPWmgLbU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCLKIq2MQZypGLqihVDKnWhh4fx6A",
       "duration": 97,
-      "animeZh": "",
+      "animeZh": "徹夜之歌",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -8039,16 +7995,21 @@
       "notes": "自動整理可信度：low",
       "topics": [],
       "enabled": true,
-      "status": "unorganized",
+      "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 185,
       "segments": [
         {
           "start": 0,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 30,
           "length": 7,
           "enabled": true
         }
@@ -8099,7 +8060,7 @@
       "channel": "EFF J",
       "thumbnail": "https://i.ytimg.com/vi/OXXaqkM9UDg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD_HKMEYkDW4NUd6Yg-e_uAbCdDfQ",
       "duration": 261,
-      "animeZh": "",
+      "animeZh": "棒球大聯盟",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -8116,11 +8077,16 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 187,
       "segments": [
+        {
+          "start": 78,
+          "length": 5,
+          "enabled": true
+        },
         {
           "start": 0,
           "length": 7,
@@ -8136,7 +8102,7 @@
       "channel": "Gameboyman100",
       "thumbnail": "https://i.ytimg.com/vi/qeMj1VL5Rdw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAl3oq3NrfbqGk9hBetq1fqGPR7mg",
       "duration": 288,
-      "animeZh": "",
+      "animeZh": "無頭騎士軼聞路",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -8153,14 +8119,19 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 188,
       "segments": [
         {
           "start": 0,
           "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 70,
+          "length": 10,
           "enabled": true
         }
       ]
@@ -8247,7 +8218,7 @@
       "channel": "Aonis",
       "thumbnail": "https://i.ytimg.com/vi/OgXZn_H_QAI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBdukldf5XTkltDf7ZXn-iFXfsR3g",
       "duration": 220,
-      "animeZh": "",
+      "animeZh": "幼女戦記",
       "animeJa": "幼女戦記",
       "animeEn": "",
       "year": "",
@@ -8264,13 +8235,18 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 191,
       "segments": [
         {
           "start": 0,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 55,
           "length": 7,
           "enabled": true
         }
@@ -8414,7 +8390,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 195,
       "segments": [
         {
@@ -8451,7 +8427,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 196,
       "segments": [
         {
@@ -8469,8 +8445,8 @@
       "channel": "席特迦米",
       "thumbnail": "https://i.ytimg.com/vi/-Aw0D6nInX4/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIFAoYzAP&rs=AOn4CLDw-9NN7Ulon7LOa_1aZa2KD5P1cQ",
       "duration": 294,
-      "animeZh": "",
-      "animeJa": "犬夜叉",
+      "animeZh": "犬夜叉",
+      "animeJa": "",
       "animeEn": "",
       "year": "",
       "season": "",
@@ -8486,9 +8462,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 197,
       "segments": [
         {
@@ -8580,7 +8556,7 @@
       "channel": "DOES Official YouTube Channel",
       "thumbnail": "https://i.ytimg.com/vi/n5TG3Fxzft0/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB0gaAAuADigIMCAAQARhlIFYoQTAP&rs=AOn4CLAtcWGbcAPMzGQdIHZWhbGwa0H99w",
       "duration": 208,
-      "animeZh": "",
+      "animeZh": "銀魂",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -8594,16 +8570,21 @@
       "notes": "自動整理可信度：low",
       "topics": [],
       "enabled": true,
-      "status": "unorganized",
+      "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 200,
       "segments": [
         {
-          "start": 0,
+          "start": 9,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 106,
           "length": 7,
           "enabled": true
         }
@@ -8619,7 +8600,7 @@
       "duration": 195,
       "animeZh": "",
       "animeJa": "BLEACH 死神",
-      "animeEn": "",
+      "animeEn": "BLEACH",
       "year": "",
       "season": "",
       "seriesPart": "",
@@ -8634,13 +8615,18 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 201,
       "segments": [
         {
-          "start": 0,
+          "start": 5,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 80,
           "length": 7,
           "enabled": true
         }
@@ -8782,9 +8768,9 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 205,
       "segments": [
         {
@@ -8839,9 +8825,9 @@
       "channel": "HDAnimeMusic",
       "thumbnail": "https://i.ytimg.com/vi/nCISdmhD-e8/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARh_IDgoEzAP&rs=AOn4CLA3_Yw9sjhBvDCpnaaaxw0rZNNs8A",
       "duration": 214,
-      "animeZh": "",
+      "animeZh": "涼宮春日",
       "animeJa": "",
-      "animeEn": "The Melancholy of Haruhi Suzumiya - Hare Hare Yukai ( ) {",
+      "animeEn": "",
       "year": "",
       "season": "",
       "seriesPart": "",
@@ -8856,9 +8842,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 207,
       "segments": [
         {
@@ -9024,7 +9010,7 @@
       "channel": "TOHO animation チャンネル",
       "thumbnail": "https://i.ytimg.com/vi/mcsEhkGprbg/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhyIDooPDAP&rs=AOn4CLCXakDV2zciLj419rMzKJDCSp9-kA",
       "duration": 91,
-      "animeZh": "",
+      "animeZh": "血界戦線",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -9038,12 +9024,12 @@
       "notes": "自動整理可信度：low",
       "topics": [],
       "enabled": true,
-      "status": "unorganized",
+      "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 212,
       "segments": [
         {
@@ -9061,9 +9047,9 @@
       "channel": "Joshua Leiss",
       "thumbnail": "https://i.ytimg.com/vi/BHvWvqPeOSU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAewl2ADCDfE1dNq1pDHk_7EEjdmw",
       "duration": 305,
-      "animeZh": "",
+      "animeZh": "天元突破",
       "animeJa": "",
-      "animeEn": "Tengen Toppa Gurren Lagann Movie",
+      "animeEn": "",
       "year": "",
       "season": "",
       "seriesPart": "",
@@ -9078,14 +9064,19 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 213,
       "segments": [
         {
           "start": 0,
           "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 67,
+          "length": 10,
           "enabled": true
         }
       ]
@@ -9152,9 +9143,9 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 215,
       "segments": [
         {
@@ -9300,9 +9291,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 219,
       "segments": [
         {
@@ -9374,9 +9365,9 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 221,
       "segments": [
         {
@@ -9394,13 +9385,13 @@
       "channel": "Key is love",
       "thumbnail": "https://i.ytimg.com/vi/4LNKcBlFYEU/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARh_IEEoHDAP&rs=AOn4CLCq-nOpnaf_wksklui4Ld9PXDpcug",
       "duration": 90,
-      "animeZh": "",
+      "animeZh": "中二病也想談戀愛",
       "animeJa": "",
-      "animeEn": "Sparkling Daydream - Chuunibyou demo Koi ga Shitai!",
+      "animeEn": "",
       "year": "",
       "season": "",
       "seriesPart": "",
-      "songTitle": "",
+      "songTitle": "Sparkling Daydream",
       "artist": "",
       "songType": "OP",
       "songIndex": "OP",
@@ -9408,16 +9399,21 @@
       "notes": "自動整理可信度：medium",
       "topics": [],
       "enabled": true,
-      "status": "unorganized",
+      "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 222,
       "segments": [
         {
           "start": 0,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 57,
           "length": 7,
           "enabled": true
         }
@@ -9470,7 +9466,7 @@
       "duration": 298,
       "animeZh": "",
       "animeJa": "",
-      "animeEn": "",
+      "animeEn": "CLANNAD",
       "year": "",
       "season": "",
       "seriesPart": "",
@@ -9485,13 +9481,18 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 224,
       "segments": [
         {
-          "start": 0,
+          "start": 6,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 65,
           "length": 7,
           "enabled": true
         }
@@ -9542,7 +9543,7 @@
       "channel": "Eve.Y Translate",
       "thumbnail": "https://i.ytimg.com/vi/PSwR6c8iV6o/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARg3IGUoGjAP&rs=AOn4CLCIRVg3xwboTCHN5LfqPNjL7anSvg",
       "duration": 225,
-      "animeZh": "",
+      "animeZh": "黄昏乙女",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -9559,13 +9560,18 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 226,
       "segments": [
         {
           "start": 0,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 115,
           "length": 7,
           "enabled": true
         }
@@ -9616,7 +9622,7 @@
       "channel": "Muse木棉花-TW",
       "thumbnail": "https://i.ytimg.com/vi/r0B7kg38xYc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB5UfoEEN2eYwK0Ku9J8ewHOOq1PA",
       "duration": 98,
-      "animeZh": "",
+      "animeZh": "輝夜姬想讓人告白～天才們的戀愛頭腦戰",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -9630,17 +9636,22 @@
       "notes": "自動整理可信度：low",
       "topics": [],
       "enabled": true,
-      "status": "unorganized",
+      "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 3,
       "order": 228,
       "segments": [
         {
           "start": 0,
           "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 14,
+          "length": 3,
           "enabled": true
         }
       ]
@@ -9670,9 +9681,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 229,
       "segments": [
         {
@@ -9801,8 +9812,8 @@
       "channel": "Eve.Y Translate",
       "thumbnail": "https://i.ytimg.com/vi/6C2g065JKvk/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhLIEYoWTAP&rs=AOn4CLAmqC4hTReJDmh-nQPtQRnrTl5fiA",
       "duration": 300,
-      "animeZh": "",
-      "animeJa": "人渣的本願",
+      "animeZh": "人渣的本願",
+      "animeJa": "",
       "animeEn": "",
       "year": "",
       "season": "",
@@ -9818,13 +9829,18 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 233,
       "segments": [
         {
           "start": 0,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 69,
           "length": 7,
           "enabled": true
         }
@@ -9892,13 +9908,18 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 235,
       "segments": [
         {
           "start": 0,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 90,
           "length": 7,
           "enabled": true
         }
@@ -9949,7 +9970,7 @@
       "channel": "Anime Spectrum",
       "thumbnail": "https://i.ytimg.com/vi/dmmnx4VQmPU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAgsGY3id-SfUJku3nXrInR95YKOw",
       "duration": 321,
-      "animeZh": "",
+      "animeZh": "石之門",
       "animeJa": "",
       "animeEn": "STEINS;GATE: The Movie - Load Region of Déjà vu",
       "year": "",
@@ -9966,14 +9987,24 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 237,
       "segments": [
         {
+          "start": 27,
+          "length": 7,
+          "enabled": true
+        },
+        {
           "start": 0,
           "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 76,
+          "length": 10,
           "enabled": true
         }
       ]
@@ -10005,7 +10036,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 238,
       "segments": [
         {
@@ -10040,9 +10071,9 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 239,
       "segments": [
         {
@@ -10060,7 +10091,7 @@
       "channel": "究極白毛控",
       "thumbnail": "https://i.ytimg.com/vi/GWY0dwzbKew/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCtEqTs_EpZaQNwa34VccSYJt29hQ",
       "duration": 254,
-      "animeZh": "",
+      "animeZh": "暗影大人",
       "animeJa": "",
       "animeEn": "Kage no Jitsuryokusha ni Naritakute",
       "year": "",
@@ -10077,13 +10108,18 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 240,
       "segments": [
         {
           "start": 0,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 58,
           "length": 7,
           "enabled": true
         }
@@ -10097,7 +10133,7 @@
       "channel": "DweSensei",
       "thumbnail": "https://i.ytimg.com/vi/71bXPAIVwAE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD7-MoixtLwOwJpBfzX9LIdu3WqBg",
       "duration": 202,
-      "animeZh": "",
+      "animeZh": "偽物語",
       "animeJa": "",
       "animeEn": "Platinum Disco - Nisemonogatari",
       "year": "",
@@ -10114,13 +10150,18 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 241,
       "segments": [
         {
           "start": 0,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 60,
           "length": 7,
           "enabled": true
         }
@@ -10134,7 +10175,7 @@
       "channel": "ナノ / NANO",
       "thumbnail": "https://i.ytimg.com/vi/6S1Ql39yAtQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCAXV-gTcLNTomxeTG_mXr7VcSyeA",
       "duration": 206,
-      "animeZh": "",
+      "animeZh": "驚爆遊戲",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -10151,11 +10192,16 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 242,
       "segments": [
+        {
+          "start": 95,
+          "length": 7,
+          "enabled": true
+        },
         {
           "start": 0,
           "length": 7,
@@ -10188,9 +10234,9 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 243,
       "segments": [
         {
@@ -10208,7 +10254,7 @@
       "channel": "xxc aoi",
       "thumbnail": "https://i.ytimg.com/vi/IxsH0VQM02w/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARg9IE4ocjAP&rs=AOn4CLCpjkqvDAVXJ4cSUWoGIQAPBDXC0w",
       "duration": 235,
-      "animeZh": "",
+      "animeZh": "機巧少女",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -10222,12 +10268,12 @@
       "notes": "自動整理可信度：low",
       "topics": [],
       "enabled": true,
-      "status": "unorganized",
+      "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 244,
       "segments": [
         {
@@ -10262,9 +10308,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 245,
       "segments": [
         {
@@ -10282,9 +10328,9 @@
       "channel": "Anime Tantei アニメ探偵",
       "thumbnail": "https://i.ytimg.com/vi/FKWUJnjmz_0/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhKIEkoWTAP&rs=AOn4CLCY9zUacUm8647sY5hSqBL4gwPWdg",
       "duration": 91,
-      "animeZh": "",
+      "animeZh": "虎與龍",
       "animeJa": "",
-      "animeEn": "Toradora",
+      "animeEn": "",
       "year": "",
       "season": "",
       "seriesPart": "",
@@ -10299,11 +10345,21 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 4,
       "order": 246,
       "segments": [
+        {
+          "start": 54,
+          "length": 3.5,
+          "enabled": true
+        },
+        {
+          "start": 73,
+          "length": 3.5,
+          "enabled": true
+        },
         {
           "start": 0,
           "length": 7,
@@ -10393,8 +10449,8 @@
       "channel": "loli music",
       "thumbnail": "https://i.ytimg.com/vi/dWAyktx35eQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDjDNP6wxqaaQow9oVKUGkjw35okA",
       "duration": 309,
-      "animeZh": "",
-      "animeJa": "魔法少女小圓",
+      "animeZh": "魔法少女小圓",
+      "animeJa": "",
       "animeEn": "",
       "year": "",
       "season": "",
@@ -10410,13 +10466,18 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 249,
       "segments": [
         {
           "start": 0,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 90,
           "length": 7,
           "enabled": true
         }
@@ -10541,7 +10602,7 @@
       "channel": "Taiga Aisaka, Minori Kushieda, Ami Kawashima(Rie Kugimiya, Yui Horie,... - Topic",
       "thumbnail": "https://i.ytimg.com/vi/s2bECQLBPdg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD-drpvzdessVZZs4mHuVkbIeIIRw",
       "duration": 279,
-      "animeZh": "",
+      "animeZh": "虎與龍",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -10549,7 +10610,7 @@
       "seriesPart": "",
       "songTitle": "",
       "artist": "",
-      "songType": "",
+      "songType": "ED",
       "songIndex": "",
       "hint": "",
       "notes": "自動整理可信度：low",
@@ -10558,14 +10619,19 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 253,
       "segments": [
         {
-          "start": 0,
-          "length": 7,
+          "start": 193,
+          "length": 4,
+          "enabled": true
+        },
+        {
+          "start": 72.7,
+          "length": 30,
           "enabled": true
         }
       ]
@@ -10632,9 +10698,9 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 255,
       "segments": [
         {
@@ -10743,9 +10809,9 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 258,
       "segments": [
         {
@@ -10763,9 +10829,9 @@
       "channel": "vizmedia",
       "thumbnail": "https://i.ytimg.com/vi/Tt4_enX63K0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCCuWkSurK8ivWDajp8HeQ3et5RGQ",
       "duration": 95,
-      "animeZh": "",
+      "animeZh": "殭屍100",
       "animeJa": "",
-      "animeEn": "OPENING #2",
+      "animeEn": "",
       "year": "",
       "season": "",
       "seriesPart": "",
@@ -10780,9 +10846,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 259,
       "segments": [
         {
@@ -10817,9 +10883,9 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 260,
       "segments": [
         {
@@ -10856,7 +10922,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 261,
       "segments": [
         {
@@ -10911,7 +10977,7 @@
       "channel": "星澪",
       "thumbnail": "https://i.ytimg.com/vi/gM5yKQfdlk8/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIE8oWjAP&rs=AOn4CLBAAiFQToJd7TeAXrBMQNIYXgn8Ng",
       "duration": 217,
-      "animeZh": "",
+      "animeZh": "DOREMI",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -10930,7 +10996,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 3,
       "order": 263,
       "segments": [
         {
@@ -11022,9 +11088,9 @@
       "channel": "oOREMEMBEROo",
       "thumbnail": "https://i.ytimg.com/vi/l6vakC-Tq7I/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDp--EFh6GTYsuh9-kKSPHFkv1QWQ",
       "duration": 215,
-      "animeZh": "",
+      "animeZh": "來自深淵",
       "animeJa": "",
-      "animeEn": "Riko Azuna - KatachiMade in Abyss:Retsujitsu no Ougonkyou",
+      "animeEn": "",
       "year": "",
       "season": "",
       "seriesPart": "",
@@ -11039,14 +11105,19 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 266,
       "segments": [
         {
           "start": 0,
           "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 54,
+          "length": 10,
           "enabled": true
         }
       ]
@@ -11244,7 +11315,7 @@
       "channel": "TOHO animation チャンネル",
       "thumbnail": "https://i.ytimg.com/vi/tF4faMbs5oQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBAESJ_N_1i_3-LLW49IQzSiq8sog",
       "duration": 91,
-      "animeZh": "",
+      "animeZh": "Dr.STONE",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -11258,14 +11329,19 @@
       "notes": "自動整理可信度：low",
       "topics": [],
       "enabled": true,
-      "status": "unorganized",
+      "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 272,
       "segments": [
+        {
+          "start": 12,
+          "length": 3,
+          "enabled": true
+        },
         {
           "start": 0,
           "length": 7,
@@ -11392,7 +11468,7 @@
       "channel": "Egret",
       "thumbnail": "https://i.ytimg.com/vi/EHOPTVBFpgM/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARh_IBMoFTAP&rs=AOn4CLDR743LiNrxZiCF0Gb72xgqci5x6A",
       "duration": 243,
-      "animeZh": "",
+      "animeZh": "真蓋特",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -11409,13 +11485,18 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 276,
       "segments": [
         {
           "start": 0,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 62,
           "length": 7,
           "enabled": true
         }
@@ -11446,9 +11527,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 277,
       "segments": [
         {
@@ -11466,81 +11547,7 @@
       "channel": "avex",
       "thumbnail": "https://i.ytimg.com/vi/RZOOabuQc9M/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCyQkSHK_EDUCzvnq1I9ErA0AlVgA",
       "duration": 191,
-      "animeZh": "",
-      "animeJa": "",
-      "animeEn": "",
-      "year": "",
-      "season": "",
-      "seriesPart": "",
-      "songTitle": "",
-      "artist": "",
-      "songType": "",
-      "songIndex": "",
-      "hint": "",
-      "notes": "自動整理可信度：low",
-      "topics": [],
-      "enabled": true,
-      "status": "unorganized",
-      "videoStatus": "unknown",
-      "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
-      "order": 278,
-      "segments": [
-        {
-          "start": 0,
-          "length": 7,
-          "enabled": true
-        }
-      ]
-    },
-    {
-      "id": "q_cEz0nXpcRHc",
-      "videoId": "cEz0nXpcRHc",
-      "url": "https://www.youtube.com/watch?v=cEz0nXpcRHc",
-      "originalTitle": "ZATCH BELL: Chichi wo Moge [Full dance]",
-      "channel": "Ryuta Kun",
-      "thumbnail": "https://i.ytimg.com/vi/cEz0nXpcRHc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDerG0YnGW4eqhP7KDpqY1V4vHm3A",
-      "duration": 204,
-      "animeZh": "",
-      "animeJa": "",
-      "animeEn": "",
-      "year": "",
-      "season": "",
-      "seriesPart": "",
-      "songTitle": "",
-      "artist": "",
-      "songType": "",
-      "songIndex": "",
-      "hint": "",
-      "notes": "自動整理可信度：low",
-      "topics": [],
-      "enabled": true,
-      "status": "unorganized",
-      "videoStatus": "unknown",
-      "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
-      "order": 279,
-      "segments": [
-        {
-          "start": 0,
-          "length": 7,
-          "enabled": true
-        }
-      ]
-    },
-    {
-      "id": "q_6OTYIhm3_Ds",
-      "videoId": "6OTYIhm3_Ds",
-      "url": "https://www.youtube.com/watch?v=6OTYIhm3_Ds",
-      "originalTitle": "Northern lights",
-      "channel": "Megumi Hayashibara - Topic",
-      "thumbnail": "https://i.ytimg.com/vi/6OTYIhm3_Ds/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLALXcLo_Pjv2unY8vqKlDHFPk5l6Q",
-      "duration": 210,
-      "animeZh": "",
+      "animeZh": "小丸子",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -11559,12 +11566,101 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 2,
-      "order": 280,
+      "playCount": 1,
+      "order": 278,
       "segments": [
         {
           "start": 0,
           "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 47,
+          "length": 3,
+          "enabled": true
+        },
+        {
+          "start": 51,
+          "length": 3,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "q_cEz0nXpcRHc",
+      "videoId": "cEz0nXpcRHc",
+      "url": "https://www.youtube.com/watch?v=cEz0nXpcRHc",
+      "originalTitle": "ZATCH BELL: Chichi wo Moge [Full dance]",
+      "channel": "Ryuta Kun",
+      "thumbnail": "https://i.ytimg.com/vi/cEz0nXpcRHc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDerG0YnGW4eqhP7KDpqY1V4vHm3A",
+      "duration": 204,
+      "animeZh": "奶子歌",
+      "animeJa": "",
+      "animeEn": "",
+      "year": "",
+      "season": "",
+      "seriesPart": "",
+      "songTitle": "",
+      "artist": "",
+      "songType": "",
+      "songIndex": "",
+      "hint": "",
+      "notes": "自動整理可信度：low",
+      "topics": [],
+      "enabled": true,
+      "status": "unorganized",
+      "videoStatus": "unknown",
+      "addedAt": "2026-07-15",
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 3,
+      "order": 279,
+      "segments": [
+        {
+          "start": 0,
+          "length": 4,
+          "enabled": true
+        },
+        {
+          "start": 71,
+          "length": 1.5,
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "q_6OTYIhm3_Ds",
+      "videoId": "6OTYIhm3_Ds",
+      "url": "https://www.youtube.com/watch?v=6OTYIhm3_Ds",
+      "originalTitle": "Northern lights",
+      "channel": "Megumi Hayashibara - Topic",
+      "thumbnail": "https://i.ytimg.com/vi/6OTYIhm3_Ds/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLALXcLo_Pjv2unY8vqKlDHFPk5l6Q",
+      "duration": 210,
+      "animeZh": "通靈王",
+      "animeJa": "",
+      "animeEn": "",
+      "year": "",
+      "season": "",
+      "seriesPart": "",
+      "songTitle": "",
+      "artist": "",
+      "songType": "",
+      "songIndex": "",
+      "hint": "",
+      "notes": "自動整理可信度：low",
+      "topics": [],
+      "enabled": true,
+      "status": "unorganized",
+      "videoStatus": "unknown",
+      "addedAt": "2026-07-15",
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 4,
+      "order": 280,
+      "segments": [
+        {
+          "start": 80,
+          "length": 5,
           "enabled": true
         }
       ]
@@ -11594,9 +11690,9 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 281,
       "segments": [
         {
@@ -11651,7 +11747,7 @@
       "channel": "ナナヲアカリ OFFICIAL",
       "thumbnail": "https://i.ytimg.com/vi/IEEJA1ZeQaI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD9vJo-QxA4VRtPVVdY-7TPMB5f9g",
       "duration": 193,
-      "animeZh": "",
+      "animeZh": "契約之吻",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -11688,13 +11784,13 @@
       "channel": "Yiu Yiu",
       "thumbnail": "https://i.ytimg.com/vi/qsm0eEQYvH0/hqdefault.jpg?sqp=-oaymwE2CNACELwBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB0gaAAuADigIMCAAQARhyIDsoODAP&rs=AOn4CLBfiu8wCbMx63FsrswBWEjFcaS27w",
       "duration": 240,
-      "animeZh": "",
+      "animeZh": "未來日記",
       "animeJa": "",
       "animeEn": "",
       "year": "",
       "season": "",
       "seriesPart": "",
-      "songTitle": "",
+      "songTitle": "空想神话",
       "artist": "",
       "songType": "",
       "songIndex": "",
@@ -11702,7 +11798,7 @@
       "notes": "自動整理可信度：low",
       "topics": [],
       "enabled": true,
-      "status": "unorganized",
+      "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
       "firstPlayedYear": "",
@@ -11836,7 +11932,7 @@
       "channel": "MONKEY MAJIK OFFICIAL CHANNEL",
       "thumbnail": "https://i.ytimg.com/vi/9HJibe31iJQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBDjHkzp04QniHglWMhzbVwmblc-w",
       "duration": 239,
-      "animeZh": "",
+      "animeZh": "滑頭鬼之孫",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -11853,9 +11949,9 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 288,
       "segments": [
         {
@@ -11910,7 +12006,7 @@
       "channel": "Hopper Fencer",
       "thumbnail": "https://i.ytimg.com/vi/hy6GryNJjVI/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAXL8PbyYASwowxPfruQ_mvOK_BVw",
       "duration": 303,
-      "animeZh": "",
+      "animeZh": "第一神拳",
       "animeJa": "",
       "animeEn": "",
       "year": "",
@@ -11927,13 +12023,18 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 290,
       "segments": [
         {
           "start": 0,
+          "length": 7,
+          "enabled": true
+        },
+        {
+          "start": 96,
           "length": 7,
           "enabled": true
         }
@@ -11964,9 +12065,9 @@
       "status": "unorganized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 291,
       "segments": [
         {
@@ -12038,9 +12139,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 294,
       "segments": [
         {
@@ -12085,9 +12186,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 295,
       "segments": [
         {
@@ -12132,9 +12233,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 297,
       "segments": [
         {
@@ -12169,9 +12270,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 298,
       "segments": [
         {
@@ -12216,9 +12317,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 2,
       "order": 299,
       "segments": [
         {
@@ -12303,43 +12404,6 @@
       ]
     },
     {
-      "id": "q_v86m2RdPSo8",
-      "videoId": "v86m2RdPSo8",
-      "url": "https://www.youtube.com/watch?v=v86m2RdPSo8",
-      "originalTitle": "「甲賀忍法帖」（MV）",
-      "channel": "陰陽座 Official",
-      "thumbnail": "https://i.ytimg.com/vi/v86m2RdPSo8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD9BcYOlXL5Ks2qPzbB_MiBqCHWOg",
-      "duration": 242,
-      "animeZh": "甲賀忍法帖",
-      "animeJa": "",
-      "animeEn": "",
-      "year": "",
-      "season": "",
-      "seriesPart": "",
-      "songTitle": "甲賀忍法帖",
-      "artist": "陰陽座",
-      "songType": "",
-      "songIndex": "",
-      "hint": "",
-      "notes": "自動整理可信度：low",
-      "topics": [],
-      "enabled": true,
-      "status": "organized",
-      "videoStatus": "unknown",
-      "addedAt": "2026-07-15",
-      "firstPlayedYear": 2026,
-      "lastPlayedYear": 2026,
-      "playCount": 2,
-      "order": 302,
-      "segments": [
-        {
-          "start": 0,
-          "length": 240,
-          "enabled": true
-        }
-      ]
-    },
-    {
       "id": "q_K7vg6KU4pbw",
       "videoId": "K7vg6KU4pbw",
       "url": "https://www.youtube.com/watch?v=K7vg6KU4pbw",
@@ -12364,14 +12428,19 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 303,
       "segments": [
         {
           "start": 0,
           "length": 90,
+          "enabled": true
+        },
+        {
+          "start": 54,
+          "length": 7,
           "enabled": true
         }
       ]
@@ -12401,9 +12470,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 304,
       "segments": [
         {
@@ -12438,9 +12507,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 305,
       "segments": [
         {
@@ -12576,7 +12645,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 308,
       "segments": [
         {
@@ -12621,9 +12690,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 309,
       "segments": [
         {
@@ -12668,9 +12737,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 310,
       "segments": [
         {
@@ -12799,9 +12868,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 313,
       "segments": [
         {
@@ -12987,9 +13056,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 318,
       "segments": [
         {
@@ -13081,9 +13150,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 321,
       "segments": [
         {
@@ -13170,9 +13239,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 324,
       "segments": [
         {
@@ -13266,7 +13335,7 @@
       "addedAt": "2026-07-15",
       "firstPlayedYear": 2026,
       "lastPlayedYear": 2026,
-      "playCount": 1,
+      "playCount": 2,
       "order": 326,
       "segments": [
         {
@@ -13311,9 +13380,9 @@
       "status": "organized",
       "videoStatus": "unknown",
       "addedAt": "2026-07-15",
-      "firstPlayedYear": "",
-      "lastPlayedYear": "",
-      "playCount": 0,
+      "firstPlayedYear": 2026,
+      "lastPlayedYear": 2026,
+      "playCount": 1,
       "order": 327,
       "segments": [
         {
