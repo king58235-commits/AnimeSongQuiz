@@ -301,7 +301,8 @@ input[type=file]{max-width:340px}
       <div class="field"><label>出題順序</label><select id="gameOrder"><option value="random">隨機</option><option value="manual">依題庫手動順序</option></select></div>
       <div class="field full"><label>隊伍名稱（每行一隊，可留空）</label><textarea id="teamNames" placeholder="A隊&#10;B隊"></textarea></div>
     </div>
-    <div class="editor-actions"><button class="btn primary" id="startGameBtn">開始遊戲</button></div>
+    <div class="notice" id="historyNotice">已記錄 0 題；之後輪次將排除這些題目。</div>
+    <div class="editor-actions"><button class="btn primary" id="startGameBtn">開始遊戲</button><button class="btn danger" id="clearHistoryBtn">清除出題紀錄</button></div>
   </div>
 
   <div id="gameStage" class="game-stage hidden">
@@ -376,6 +377,7 @@ const SEED = [];
 const DATA_URL="quiz-data.json";
 const STORAGE_KEY='animeQuizDB_v1';
 const TOPIC_KEY='animeQuizTopics_v1';
+const HISTORY_KEY='animeQuizSeenQuestionIds_v1';
 let db=[];
 let topics=[];
 let selectedId=null;
@@ -384,6 +386,7 @@ let playerReady=false, gamePlayerReady=false;
 let segmentTimer=null;
 let gameQuestions=[], gameIndex=0, currentGameSegment=0;
 let lastRandomRoundIds=[];
+let seenQuestionIds=[];
 let teams=[];
 let manualSortActive=false;
 let pointerDragState=null;
@@ -401,6 +404,8 @@ async function load(){
   let localDB=null,localTopics=null;
   try{localDB=JSON.parse(localStorage.getItem(STORAGE_KEY))}catch{}
   try{localTopics=JSON.parse(localStorage.getItem(TOPIC_KEY))}catch{}
+  try{seenQuestionIds=JSON.parse(localStorage.getItem(HISTORY_KEY))}catch{}
+  if(!Array.isArray(seenQuestionIds))seenQuestionIds=[];
   if(Array.isArray(localDB)){
     db=localDB;
     topics=Array.isArray(localTopics)?localTopics:(remote.topics||[]);
@@ -426,6 +431,7 @@ function normalizeDB(){
 function save(show=true){
   localStorage.setItem(STORAGE_KEY,JSON.stringify(db));
   localStorage.setItem(TOPIC_KEY,JSON.stringify(topics));
+  localStorage.setItem(HISTORY_KEY,JSON.stringify(seenQuestionIds));
   if(show) toast('已儲存');
 }
 function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.style.display='block';setTimeout(()=>el.style.display='none',1800)}
@@ -733,23 +739,37 @@ function renderTopics(){
   document.querySelectorAll('.delete-topic').forEach(b=>b.onclick=()=>{const t=b.dataset.t;if(confirm('刪除主題「'+t+'」？題目本身不會刪除。')){topics=topics.filter(x=>x!==t);db.forEach(q=>q.topics=q.topics.filter(x=>x!==t));save();renderAll()}})
 }
 function renderGameOptions(){
+  const keep=gameTopic.value;
   const opts='<option value="">全部啟用題目</option>'+topics.map(t=>`<option>${esc(t)}</option>`).join('');
   gameTopic.innerHTML=opts;
+  if([...gameTopic.options].some(o=>o.value===keep))gameTopic.value=keep;
+  if(window.historyNotice)historyNotice.textContent=`已記錄 ${seenQuestionIds.length} 題；之後輪次將排除這些題目。`;
 }
 function buildGameQuestionSet(){
   const topic=gameTopic.value;
-  const pool=db.filter(q=>q.enabled&&q.videoId&&q.segments.length&&(!topic||q.topics.includes(topic)));
+  const seenIds=new Set(seenQuestionIds);
+  const basePool=db.filter(q=>q.enabled&&q.videoId&&q.segments.length&&(!topic||q.topics.includes(topic)));
+  const pool=basePool.filter(q=>!seenIds.has(q.id));
   if(!pool.length)return [];
 
   const count=Math.min(+gameCount.value||20,pool.length);
   if(gameOrder.value==='manual')return pool.slice().sort((a,b)=>a.order-b.order).slice(0,count);
 
-  const previousIds=new Set(lastRandomRoundIds);
-  const fresh=shuffle(pool.filter(q=>!previousIds.has(q.id)));
-  const repeated=shuffle(pool.filter(q=>previousIds.has(q.id)));
-  const selected=fresh.concat(repeated).slice(0,count);
-  lastRandomRoundIds=selected.map(q=>q.id);
-  return selected;
+  const organized=shuffle(pool.filter(q=>q.status==='organized'));
+  const other=shuffle(pool.filter(q=>q.status!=='organized'&&q.status!=='unorganized'));
+  const unorganized=shuffle(pool.filter(q=>q.status==='unorganized'));
+  const primary=organized.concat(other);
+
+  const preferredUnorganizedCount=Math.min(unorganized.length,Math.floor(count*0.1));
+  const selected=[];
+  selected.push(...primary.splice(0,Math.max(0,count-preferredUnorganizedCount)));
+  selected.push(...unorganized.splice(0,Math.min(preferredUnorganizedCount,count-selected.length)));
+  selected.push(...primary.splice(0,count-selected.length));
+  selected.push(...unorganized.splice(0,count-selected.length));
+
+  const finalSelection=shuffle(selected.slice(0,count));
+  lastRandomRoundIds=finalSelection.map(q=>q.id);
+  return finalSelection;
 }
 function resetGameScores(){
   const enteredTeams=teamNames.value.split(/\n/).map(x=>x.trim()).filter(Boolean);
@@ -762,7 +782,8 @@ function resetGameScores(){
 }
 function startGame(){
   gameQuestions=buildGameQuestionSet();
-  if(!gameQuestions.length)return alert('沒有可用題目');
+  if(!gameQuestions.length)return alert(seenQuestionIds.length?'目前範圍內的題目都已經出現過了，請清除出題紀錄後再開始。':'沒有可用題目');
+  const seen=new Set(seenQuestionIds);gameQuestions.forEach(q=>seen.add(q.id));seenQuestionIds=[...seen];save(false);renderGameOptions();
   gameIndex=0;
   resetGameScores();
   gameSetup.classList.add('hidden');gameStage.classList.remove('hidden');showGameQuestion();
@@ -986,12 +1007,20 @@ singleYoutubeUrl.addEventListener('keydown',e=>{
   if(e.key==='Enter')importSingleYoutubeBtn.click();
 });
 createTopicBtn.onclick=()=>{const t=newTopicName.value.trim();if(!t)return;if(!topics.includes(t))topics.push(t);newTopicName.value='';save();renderAll()};
-startGameBtn.onclick=startGame;playSeg1.onclick=()=>playGameSegment(0);playSeg2.onclick=()=>playGameSegment(1);playSeg3.onclick=()=>playGameSegment(2);replayBtn.onclick=()=>playGameSegment(currentGameSegment);
+startGameBtn.onclick=startGame;
+clearHistoryBtn.onclick=()=>{
+  if(!seenQuestionIds.length)return toast('目前沒有出題紀錄');
+  if(confirm(`確定清除 ${seenQuestionIds.length} 題出題紀錄？`)){
+    seenQuestionIds=[];lastRandomRoundIds=[];save(false);renderGameOptions();toast('已清除出題紀錄');
+  }
+};
+playSeg1.onclick=()=>playGameSegment(0);playSeg2.onclick=()=>playGameSegment(1);playSeg3.onclick=()=>playGameSegment(2);replayBtn.onclick=()=>playGameSegment(currentGameSegment);
 hintBtn.onclick=()=>{const q=gameQuestions[gameIndex];if(!q.hint||!q.hint.trim())return;hintDisplay.textContent=q.hint.trim();hintDisplay.classList.remove('hidden')};
 revealBtn.onclick=reveal;prevQuestionBtn.onclick=previousQuestion;nextQuestionBtn.onclick=nextQuestion;noAnswerBtn.onclick=nextQuestion;endGameBtn.onclick=endGame;
 restartGameBtn.onclick=()=>{
   const nextSet=buildGameQuestionSet();
-  if(!nextSet.length)return alert('沒有可用題目');
+  if(!nextSet.length)return alert(seenQuestionIds.length?'目前範圍內的題目都已經出現過了，請清除出題紀錄後再開始。':'沒有可用題目');
+  const seen=new Set(seenQuestionIds);nextSet.forEach(q=>seen.add(q.id));seenQuestionIds=[...seen];save(false);renderGameOptions();
   resultScreen.classList.add('hidden');
   gameQuestions=nextSet;
   gameIndex=0;
