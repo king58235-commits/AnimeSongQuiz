@@ -313,6 +313,7 @@ input[type=file]{max-width:340px}
         <button class="btn segment-play-btn segment-1" id="playSeg1">播放片段 1</button>
         <button class="btn segment-play-btn segment-2" id="playSeg2">播放片段 2</button>
         <button class="btn segment-play-btn segment-3" id="playSeg3">播放片段 3</button>
+        <button class="btn" id="playFullBtn">從頭播放完整影片</button>
         <button class="btn" id="replayBtn">重播</button>
         <button class="btn" id="hintBtn">提示</button>
         <button class="btn" id="editCurrentQuestionBtn">編輯目前題目</button>
@@ -809,6 +810,14 @@ function playGameSegment(i){
   const q=gameQuestions[gameIndex],s=q.segments[i];if(!s)return;currentGameSegment=i;gameSegmentLabel.textContent=`正在播放片段 ${i+1}（${s.length}秒）`;
   clearTimeout(segmentTimer);gamePlayer.seekTo(s.start,true);gamePlayer.playVideo();segmentTimer=setTimeout(()=>gamePlayer.pauseVideo(),s.length*1000)
 }
+function playFullVideo(){
+  clearTimeout(segmentTimer);
+  gameSegmentLabel.textContent='正在從頭播放完整影片';
+  if(gamePlayer&&gamePlayer.seekTo&&gamePlayer.playVideo){
+    gamePlayer.seekTo(0,true);
+    gamePlayer.playVideo();
+  }
+}
 function reveal(){
   clearTimeout(segmentTimer);
   questionScreen.classList.add('hidden');
@@ -1032,7 +1041,7 @@ clearHistoryBtn.onclick=()=>{
     seenQuestionIds=[];lastRandomRoundIds=[];save(false);renderGameOptions();toast('已清除出題紀錄');
   }
 };
-playSeg1.onclick=()=>playGameSegment(0);playSeg2.onclick=()=>playGameSegment(1);playSeg3.onclick=()=>playGameSegment(2);replayBtn.onclick=()=>playGameSegment(currentGameSegment);
+playSeg1.onclick=()=>playGameSegment(0);playSeg2.onclick=()=>playGameSegment(1);playSeg3.onclick=()=>playGameSegment(2);playFullBtn.onclick=playFullVideo;replayBtn.onclick=()=>playGameSegment(currentGameSegment);
 hintBtn.onclick=()=>{const q=gameQuestions[gameIndex];if(!q.hint||!q.hint.trim())return;hintDisplay.textContent=q.hint.trim();hintDisplay.classList.remove('hidden')};
 editCurrentQuestionBtn.onclick=openCurrentQuestionInLibrary;editAnswerQuestionBtn.onclick=openCurrentQuestionInLibrary;
 revealBtn.onclick=reveal;prevQuestionBtn.onclick=previousQuestion;nextQuestionBtn.onclick=nextQuestion;noAnswerBtn.onclick=nextQuestion;endGameBtn.onclick=endGame;
